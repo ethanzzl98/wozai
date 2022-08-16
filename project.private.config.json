@@ -13,9 +13,15 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/venues/show",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
-
     }
 }
