@@ -1,4 +1,16 @@
 <!--pages/venues/show.wxml-->
-<view class="main" style="background-color: rgb(241,246,249); background-size: cover; height: 100vh; overflow-y: scroll;">
-    <text>Hi baby</text>
+<view class="main" style="background-color: rgb(241,246,249); background-size: cover; height: 100vh; overflow-y: scroll; padding: 40rpx;">
+    <view class="card-venue">
+        <image class="image-venue" src="https://www.thatsmags.com/image/view/201901/Odd-Couple-interior.jpg"></image>
+        <view class="card-venue-info">
+            <view>ADDRESS</view>
+            <view>Wuding Road 1081</view>
+            <view>PHONE</view>
+            <view>131-2263-0107</view>
+            <view>OPENING HOURS</view>
+            <view>12 pm - 2 am</view>
+            <view>restaurant</view>
+        </view>
+    </view>
+    
 </view>
