@@ -1,0 +1,4 @@
+<!--pages/venues/show.wxml-->
+<view class="main" style="background-color: rgb(241,246,249); background-size: cover; height: 100vh; overflow-y: scroll;">
+    <text>Hi baby</text>
+</view>
