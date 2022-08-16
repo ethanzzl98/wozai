@@ -52,9 +52,9 @@
 }
 
 .tag {
-    background-color: rgb(20,39,78);
+    background-color: rgb(57,72,103);
     color: white;
-    padding: 15rpx 20rpx;
+    padding: 15rpx 30rpx;
     border-radius: 50rpx;
     font-size: 32rpx;
     margin-bottom: 8rpx;
@@ -124,14 +124,14 @@
     align-self: flex-end;
     margin-bottom: 10rpx;
     padding: 10rpx 20rpx;
-    color: rgb(20,39,78);
+    color: rgb(57,72,103);
 }
 
 .number {
     color: white;
-    background-color: rgb(20,39,78);
+    background-color: rgb(57,72,103);
     border-radius: 50rpx;
-    padding: 15rpx 20rpx;
+    padding: 15rpx 30rpx;
     font-size: 32rpx;
     font-weight: 500;
 }
@@ -139,4 +139,16 @@
 .p {
     font-size: 32rpx;
     font-weight: 500;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40rpx;
+    background-color: rgb(20,39,78);
+    color: white;
+    padding: 15rpx 30rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    border-radius: 10rpx;
 }
