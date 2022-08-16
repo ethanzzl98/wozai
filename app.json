@@ -1,13 +1,12 @@
 {
-  "pages":[
+  "pages": [
     "pages/fake/venues/index",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/venues/show"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "我在! 🫡",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

@@ -1,0 +1,29 @@
+<!--pages/venues/show.wxml-->
+<view class="main" style="background-color: rgb(241,246,249); background-size: cover; height: 100vh; overflow-y: scroll; padding: 40rpx;">
+    <view class="card-venue">
+        <view class="venue-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(https://www.thatsmags.com/image/view/201901/Odd-Couple-interior.jpg); background-size: cover;">
+            <view class="venue-title">Malabar</view>
+        </view>
+        <view class="card-venue-info">
+            <view class="info-header">ADDRESS</view>
+            <view class="info-content">Wuding Road 1081</view>
+            <view class="info-header">PHONE</view>
+            <view class="info-content">131-2263-0107</view>
+        </view>
+        <view class="card-venue-add-info">
+            <view>
+                <view class="info-header">OPENING HOURS</view>
+                <view class="time">12 pm - 2 am</view>
+            </view>
+            <view class="venue-tag">
+                <view class="tag">restaurant</view>
+            </view>
+        </view>
+        <view class="leaderboard-title">Leaderboard</view>
+        <view class="leaderboard">
+            <view class="third-place"></view>
+            <view class="first-place"></view>
+            <view class="second-place"></view>
+        </view>
+    </view>
+</view>
