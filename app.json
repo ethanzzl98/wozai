@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/apilists/index",
     "pages/index/index",
     "pages/logs/logs"
   ],
