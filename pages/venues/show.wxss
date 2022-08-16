@@ -35,7 +35,7 @@
     font-weight: 600;
     color: black;
     border-bottom: 2rpx solid rgba(155,164,180,.1);
-    margin-bottom: 16rpx;
+    margin-bottom: 10rpx;
 }
 
 .card-venue-info-bottom {
@@ -77,28 +77,34 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    overflow: hidden;
+}
+
+.third-place, .first-place, .second-place {
+    width: 180rpx;
+    border-style: solid;
+    border-width: 2rpx 2rpx 0rpx 2rpx;
+    border-color: rgb(57,72,103);
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .third-place {
     height: 150rpx;
-    width: 180rpx;
-    border-style: solid;
-    border-width: 2rpx 2rpx 0rpx 2rpx;
-    border-color: rgb(57,72,103);
 }
 
 .first-place {
     height: 250rpx;
-    width: 180rpx;
-    border-style: solid;
-    border-width: 2rpx 2rpx 0rpx 2rpx;
-    border-color: rgb(57,72,103);
 }
 
 .second-place {
     height: 200rpx;
-    width: 180rpx;
-    border-style: solid;
-    border-width: 2rpx 2rpx 0rpx 2rpx;
-    border-color: rgb(57,72,103);
+}
+
+.avatar  {
+    height: 100rpx;
+    width: 100rpx;
+    position: absolute;
+    top: -100rpx;
 }

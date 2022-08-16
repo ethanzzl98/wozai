@@ -19,9 +19,15 @@
         </view>
         <view class="leaderboard-title">Leaderboard</view>
         <view class="leaderboard">
-            <view class="third-place"></view>
-            <view class="first-place"></view>
-            <view class="second-place"></view>
+            <view class="third-place">
+                <image class="avatar" src="/images/avatar.png"></image>
+            </view>
+            <view class="first-place">
+                <image class="avatar" src="/images/avatar.png"></image>
+            </view>
+            <view class="second-place">
+                <image class="avatar" src="/images/avatar.png"></image>
+            </view>
         </view>
     </view>
 </view>
