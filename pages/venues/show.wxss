@@ -1,14 +1,74 @@
 /* pages/venues/show.wxss */
 .card-venue {
     background-color: #FFFFFF;
-    border: 2rpx solid rgb(57, 72, 103);
+    border: 2rpx solid rgb(57,72,103);
     border-radius: 50rpx;
     overflow: hidden;
     box-shadow: 0px 8rpx 8rpx rgba(0,0,0,0.25);
 }
 
-.image-venue {
+.venue-image {
     height: 300rpx;
     width: 100%;
-    object-fit: cover;
+}
+
+.venue-title {
+    padding: 220rpx 20rpx;
+    color: white;
+    font-weight: 600;
+    font-size: 54rpx;
+    text-shadow: 2rpx 2rpx 4rpx rgb(57,72,103);
+}
+
+.card-venue-info {
+    padding: 10rpx 20rpx;
+}
+
+.info-header {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgb(155,164,180);
+}
+
+.info-content {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: black;
+    border-bottom: 2rpx solid rgba(155,164,180,.1);
+    margin-bottom: 16rpx;
+}
+
+.card-venue-add-info {
+    padding: 0 20rpx;
+    display: flex;
+}
+
+.time {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 16rpx;
+}
+
+.venue-tag {
+    margin-left: 180rpx;
+    margin-top: 10rpx;
+}
+
+.tag {
+    background-color: rgb(20,39,78);
+    color: white;
+    padding: 10rpx 20rpx;
+    border-radius: 50rpx;
+    font-size: 32rpx;
+}
+
+.leaderboard-title {
+    padding: 10rpx 20rpx;
+    border-top: 2rpx solid rgb(57,72,103);
+    display: flex;
+    justify-content: center;
+    color: rgb(20,39,78);
+    font-size: 44rpx;
+    font-weight: 600;
 }
