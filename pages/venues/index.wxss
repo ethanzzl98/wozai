@@ -1,0 +1,78 @@
+/* pages/venues/index.wxss */
+.allpage {
+   background-image: #F1F6F9; 
+   padding: 0 70rpx;
+}
+
+
+.myMap_design {
+    width: 100%;
+    height: 650rpx;
+    margin-bottom: 40rpx;
+    border: 2px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.container {
+    /* padding: 8rpx; */
+    width: 100%;
+    height: 134rpx;
+    margin-top: 48rpx;
+    background: rgba(217, 217, 217, 0.2);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    position: relative;
+}
+
+.restaurant-name {
+    /* text-align: left; */
+    color: white;
+    font: 10rpx, bold;
+    margin: 16rpx;
+    text-shadow: 2px 2px #000000;
+}
+
+.restaurant-poster {
+    position: absolute;
+    z-index: -9;
+    width: 100%;
+    height: 134rpx;
+    border-radius: 25px; 
+}
+
+.address {
+    /* text-align: left; */
+    color: white;
+    Fill: Solid #FFFFFF;
+    margin: 16rpx;
+    text-shadow: 2px 2px #000000;
+}
+
+.distance {
+    color: white;
+    text-shadow: 2px 2px #000000;
+    Fill: Solid #FFFFFF;
+    Stroke: Solid #000000;
+    margin: 16rpx;
+    position: absolute;
+    right: 72rpx;
+    top: 0px;
+    width: 40px;
+    margin-top: 80rpx;
+}

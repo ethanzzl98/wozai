@@ -1,0 +1,30 @@
+<!--pages/venues/index.wxml-->
+<view class="allpage">
+    <map id="myMap" class="myMap_design" show-location></map>
+
+    <view class="search">
+        <text>Search</text>
+    </view>
+
+    <view class="container" style="position:relative">
+        <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
+        <view class="restaurant-name">Malabar</view>
+        <view class="address">ShanxiLu, 599</view>
+        
+        <view class="distance">1.2km</view>
+    </view>
+
+    <view class="container">
+        <image mode="aspectFill" class="restaurant-poster" src="https://dwj199mwkel52.cloudfront.net/assets/core/default/placeholder-mobile-slider-67ed91b44e4c2be33619d93c77e4298ef1d516b3eeffc4fcc2a3ffc86c0a4930.jpg" />
+        <view class="restaurant-name">Le Wagon</view>
+        <view class="address">YangPing Lu, 425</view>
+        <view class="distance">100m</view>
+    </view>
+
+    <view class="container">
+        <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
+        <view class="restaurant-name">Execute</view>
+        <view class="address">Yang Ping Lu, 425</view>
+        <view class="distance">500m</view>
+    </view>
+</view>
