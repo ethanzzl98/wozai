@@ -74,9 +74,34 @@
 }
 
 .leaderboard {
-    padding: 10rpx 20rpx;
+    padding: 10rpx 20rpx 0rpx 20rpx;
     border-top: 2rpx solid rgb(57,72,103);
-    height: 300rpx;
+    height: 400rpx;
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
+}
+
+.third-place {
+    height: 150rpx;
+    width: 180rpx;
+    border-style: solid;
+    border-width: 2rpx 2rpx 0rpx 2rpx;
+    border-color: rgb(57,72,103);
+}
+
+.first-place {
+    height: 250rpx;
+    width: 180rpx;
+    border-style: solid;
+    border-width: 2rpx 2rpx 0rpx 2rpx;
+    border-color: rgb(57,72,103);
+}
+
+.second-place {
+    height: 200rpx;
+    width: 180rpx;
+    border-style: solid;
+    border-width: 2rpx 2rpx 0rpx 2rpx;
+    border-color: rgb(57,72,103);
 }
