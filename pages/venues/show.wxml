@@ -21,6 +21,9 @@
         </view>
         <view class="leaderboard-title">Leaderboard</view>
         <view class="leaderboard">
+            <view>3</view>
+            <view>1</view>
+            <view>2</view>
         </view>
     </view>
 </view>
