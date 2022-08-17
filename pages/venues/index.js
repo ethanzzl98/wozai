@@ -1,4 +1,5 @@
 // pages/venues/index.js
+const app = getApp()
 Page({
 
     /**
@@ -14,7 +15,29 @@ Page({
     onLoad(options) {
 
     },
-
+    getData() {
+        let page = this;
+        wx.request({
+          url: `${app.globalData.baseUrl}/venues`,
+          method: 'GET',
+          header: app.globalData.header,
+          success(res) {
+            const {venues} = res.data;
+            page.setData({
+              venues: venues,
+            });
+            console.log(page.data)
+          }
+        })
+      },
+      onShow() {
+        const page = this;
+        if (app.globalData.header) {
+          page.getData()
+        } else {
+          wx.event.on('loginFinish', page, page.getData)
+        }
+      },
     /**
      * Lifecycle function--Called when page is initially rendered
      */
@@ -64,9 +87,6 @@ Page({
     /**
      * Lifecycle function--Called when page show
      */
-    onShow() {
-
-    },
 
     /**
      * Lifecycle function--Called when page hide
