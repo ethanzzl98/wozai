@@ -1,12 +1,14 @@
 {
-  "pages": [
-    "pages/fake/venues/index",
-    "pages/venues/show"
+  "pages":[
+    "pages/venues/index",
+    "pages/venues/show",
+    "pages/index/index",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我在! 🫡",
+    "navigationBarTitleText": "Wo Zai",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
