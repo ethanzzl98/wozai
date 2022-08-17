@@ -19,10 +19,10 @@
         </view>
         <view class="leaderboard-title">Leaderboard</view>
         <view class="leaderboard">
-            <view class="third-place">
+            <view class="second-place">
                 <image class="avatar" src="/images/avatar.png"></image>
                 <view class="visits">
-                    <view class="number">25</view>
+                    <view class="number">50</view>
                     <view class="p">visits</view>
                 </view>
             </view>
@@ -34,10 +34,10 @@
                     <view class="p">visits</view>
                 </view>
             </view>
-            <view class="second-place">
+            <view class="third-place">
                 <image class="avatar" src="/images/avatar.png"></image>
                 <view class="visits">
-                    <view class="number">50</view>
+                    <view class="number">25</view>
                     <view class="p">visits</view>
                 </view>
             </view>
