@@ -1,6 +1,6 @@
 /* pages/venues/show.wxss */
 .card-venue {
-    background-color: #FFFFFF;
+    background-color: white;
     border: 2rpx solid rgb(57,72,103);
     border-radius: 50rpx;
     overflow: hidden;
@@ -150,5 +150,5 @@
     padding: 15rpx 30rpx;
     font-size: 36rpx;
     font-weight: bold;
-    border-radius: 10rpx;
+    border-radius: 50rpx;
 }

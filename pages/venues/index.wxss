@@ -1,78 +1,58 @@
 /* pages/venues/index.wxss */
-.allpage {
-   background-image: #F1F6F9; 
-   padding: 0 70rpx;
-}
-
-
-.myMap_design {
-    width: 100%;
+.my-map-design {
+    width: auto;
     height: 650rpx;
     margin-bottom: 40rpx;
-    border: 2px solid #000000;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
+    border: 2rpx solid rgb(57,72,103);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    border-radius: 50rpx;
+    overflow: hidden;
 }
 
 .search {
-    box-sizing: border-box;
-    width: 100%;
-    height: 32px;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
     background: #FFFFFF;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    border: 2rpx solid rgb(57,72,103);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    border-radius: 50rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10rpx 20rpx;
+    color: rgb(155,164,180);
+    font-weight: 400;
 }
 
-.container {
-    /* padding: 8rpx; */
-    width: 100%;
-    height: 134rpx;
-    margin-top: 48rpx;
-    background: rgba(217, 217, 217, 0.2);
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    position: relative;
+.card-venue {
+    height: 250rpx;
+    width: auto;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    border: 2rpx solid rgb(57,72,103);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    border-radius: 50rpx;
 }
 
-.restaurant-name {
-    /* text-align: left; */
+.venue-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 140rpx 20rpx;
+}
+
+.venue-name, .venue-address {
     color: white;
-    font: 10rpx, bold;
-    margin: 16rpx;
-    text-shadow: 2px 2px #000000;
+    font-weight: 600;
+    font-size: 34rpx;
+    text-shadow: 2rpx 2rpx 4rpx rgb(57,72,103);
 }
 
-.restaurant-poster {
-    position: absolute;
-    z-index: -9;
-    width: 100%;
-    height: 134rpx;
-    border-radius: 25px; 
-}
-
-.address {
-    /* text-align: left; */
+.venue-distance {
     color: white;
-    Fill: Solid #FFFFFF;
-    margin: 16rpx;
-    text-shadow: 2px 2px #000000;
-}
-
-.distance {
-    color: white;
-    text-shadow: 2px 2px #000000;
-    Fill: Solid #FFFFFF;
-    Stroke: Solid #000000;
-    margin: 16rpx;
-    position: absolute;
-    right: 72rpx;
-    top: 0px;
-    width: 40px;
-    margin-top: 80rpx;
+    background-color: rgb(57, 72, 103);
+    padding: 15rpx 30rpx;
+    border-radius: 50rpx;
+    font-weight: 600;
+    font-size: 34rpx;
+    margin-bottom: 6rpx;
 }
