@@ -43,5 +43,5 @@
             </view>
         </view>
     </view>
-    <view class="button">我在!</view>
+    <view class="checkin-button">我在!</view>
 </view>
