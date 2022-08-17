@@ -16,7 +16,21 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/venues/show",
+                    "pathName": "pages/venues/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/landing/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/landing/index",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

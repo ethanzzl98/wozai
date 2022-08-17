@@ -13,6 +13,14 @@ Page({
      */
     onLoad(options) {
 
+      wx.showLoading({
+        title: 'Loading ',
+      })
+      
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1500)
+
     },
 
     /**
