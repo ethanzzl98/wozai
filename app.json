@@ -1,9 +1,11 @@
 {
   "pages":[
+    "pages/loading/index",
     "pages/venues/index",
     "pages/venues/show",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/fake/venues/index"
   ],
   "window": {
     "backgroundTextStyle":"light",
@@ -24,6 +26,9 @@
         "text": "Profile",
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile_active.png"
+    }, {
+        "pagePath": "pages/fake/venues/index",
+        "text": "fakeVenues"
     }]
   },
   "style": "v2",
