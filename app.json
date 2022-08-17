@@ -9,6 +9,21 @@
     "navigationBarTitleText": "我在! 🫡",
     "navigationBarTextStyle":"black"
   },
+  "tabBar": {
+    "color": "9BA4B4",
+    "selectedColor": "14274E",
+    "list": [{
+        "pagePath": "pages/venues/index",
+        "text": "Home",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+    }, {
+        "pagePath": "pages/users/show",
+        "text": "Profile",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile_active.png"
+    }]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
