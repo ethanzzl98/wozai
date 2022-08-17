@@ -6,12 +6,13 @@
         <text>Search</text>
     </view>
 
-    <view class="container" style="position:relative">
-        <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
-        <view class="restaurant-name">Malabar</view>
-        <view class="address">ShanxiLu, 599</view>
-        
-        <view class="distance">1.2km</view>
+    <view class="container">
+        <navigator url="/page/venues/show">
+            <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
+            <view class="restaurant-name">Malabar</view>
+            <view class="address">ShanxiLu, 599</view>
+            <view class="distance">1.2km</view>
+        </navigator>
     </view>
 
     <view class="container">
