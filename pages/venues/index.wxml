@@ -9,31 +9,15 @@
         </map>
     </view>
     <view class="search">Search</view>
-    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
-        <view class="venue-info">
-            <view>
-                <view class="venue-name">Malabar</view>
-                <view class="venue-address">Wuding Rd 1081</view>
+    <view wx:for="{{venues}}" bindtap="goToShow" data-index="{{item.id}}">
+        <view class="card-venue" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
+            <view class="venue-info">
+                <view>
+                    <view class="venue-name">{{ item.name }}</view>
+                    <!-- <view class="venue-address">{{ item.address }}</view> -->
+                </view>
+                <view class="venue-distance">700m</view>
             </view>
-            <view class="venue-distance">700m</view>
-        </view>
-    </view>
-    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
-        <view class="venue-info">
-            <view>
-                <view class="venue-name">The Shed</view>
-                <view class="venue-address">North Shaanxi Rd 698</view>
-            </view>
-            <view class="venue-distance">1.4km</view>
-        </view>
-    </view>
-    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
-        <view class="venue-info">
-            <view>
-                <view class="venue-name">Grand Yard</view>
-                <view class="venue-address">Xikang Rd 608-1</view>
-            </view>
-            <view class="venue-distance">1.0km</view>
         </view>
     </view>
 </view>

@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/loading/index",
+    "pages/landing/index",
     "pages/venues/index",
     "pages/venues/show",
     "pages/index/index",
