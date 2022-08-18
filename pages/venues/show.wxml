@@ -1,12 +1,12 @@
 <!--pages/venues/show.wxml-->
-<view class="main" style="background-color: rgb(241,246,249); background-size: cover; height: 100vh; overflow-y: scroll; padding: 40rpx;">
+<view class="main">
     <view class="card-venue">
         <view class="venue-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(https://www.thatsmags.com/image/view/201901/Odd-Couple-interior.jpg); background-size: cover;">
             <view class="venue-title">Malabar</view>
         </view>
         <view class="card-venue-info-top">
             <view class="info-header">ADDRESS</view>
-            <view class="info-content">Wuding Road 1081</view>
+            <view class="info-content">Wuding Rd 1081</view>
             <view class="info-header">PHONE</view>
             <view class="info-content">131-2263-0107</view>
         </view>
@@ -43,5 +43,5 @@
             </view>
         </view>
     </view>
-    <view class="button">我在!</view>
+    <view class="checkin-button">我在!</view>
 </view>

@@ -1,30 +1,34 @@
 <!--pages/venues/index.wxml-->
-<view class="allpage">
-    <map id="myMap" class="myMap_design" show-location></map>
-
-    <view class="search">
-        <text>Search</text>
+<view class="main">
+    <view>
+        <map id="myMap" class="my-map-design" show-location></map>
     </view>
-
-    <view class="container" style="position:relative">
-        <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
-        <view class="restaurant-name">Malabar</view>
-        <view class="address">ShanxiLu, 599</view>
-        
-        <view class="distance">1.2km</view>
+    <view class="search">Search</view>
+    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
+        <view class="venue-info">
+            <view>
+                <view class="venue-name">Malabar</view>
+                <view class="venue-address">Wuding Rd 1081</view>
+            </view>
+            <view class="venue-distance">700m</view>
+        </view>
     </view>
-
-    <view class="container">
-        <image mode="aspectFill" class="restaurant-poster" src="https://dwj199mwkel52.cloudfront.net/assets/core/default/placeholder-mobile-slider-67ed91b44e4c2be33619d93c77e4298ef1d516b3eeffc4fcc2a3ffc86c0a4930.jpg" />
-        <view class="restaurant-name">Le Wagon</view>
-        <view class="address">YangPing Lu, 425</view>
-        <view class="distance">100m</view>
+    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
+        <view class="venue-info">
+            <view>
+                <view class="venue-name">The Shed</view>
+                <view class="venue-address">North Shaanxi Rd 698</view>
+            </view>
+            <view class="venue-distance">1.4km</view>
+        </view>
     </view>
-
-    <view class="container">
-        <image mode="aspectFill" class="restaurant-poster" src="https://images.adsttc.com/media/images/5e4c/1025/6ee6/7e0b/9d00/0877/large_jpg/feature_-_Main_hall_1.jpg?1582043123" />
-        <view class="restaurant-name">Execute</view>
-        <view class="address">Yang Ping Lu, 425</view>
-        <view class="distance">500m</view>
+    <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
+        <view class="venue-info">
+            <view>
+                <view class="venue-name">Grand Yard</view>
+                <view class="venue-address">Xikang Rd 608-1</view>
+            </view>
+            <view class="venue-distance">1.0km</view>
+        </view>
     </view>
 </view>
