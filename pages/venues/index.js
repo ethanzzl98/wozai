@@ -13,22 +13,76 @@ Page({
      * Page initial data
      */
     data: {
-
+        
+        markers: [{
+            latitude: 31.233442,
+            longitude: 121.437512,
+            name: 'Le Wagon',
+            desc: '我现在的位置'
+        },{
+            latitude: 31.234511,
+            longitude: 121.45017,
+            name: 'The Shed',
+            desc: '我现在的位置'
+        },{
+            latitude: 23.099994,
+            longitude: 113.324520,
+            name: 'T.I.T 创意园',
+            desc: '我现在的位置'
+        },
+        {
+            latitude: 23.099994,
+            longitude: 113.324520,
+            name: 'T.I.T 创意园',
+            desc: '我现在的位置'
+        },
+        {
+            latitude: 23.099994,
+            longitude: 113.324520,
+            name: 'T.I.T 创意园',
+            desc: '我现在的位置'
+        }
+    ],
+        covers: [{
+            latitude: 31.233442,
+            longitude: 121.437512,
+            iconPath: '../../images/wechart.png',
+            rotate: 10
+        }, {
+            latitude: 31.234511,
+            longitude: 121.45017,
+            iconPath: '../../images/wechart.png',
+            rotate: 90
+            }]
+          
     },
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
     
-      wx.showLoading({
-        title: 'Loading',
-      })
+      
       
       setTimeout(function () {
         wx.hideLoading()
       }, 1500)
 
+      this.mapContext = wx.createMapContext('myMap');
+
+        var that = this
+        wx.getLocation({
+            type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+            success: function (res) {
+              console.log(res)
+                var latitude = res.latitude; 
+                var longitude = res.longitude; 
+                
+            }
+        });
+    
     },
+
+    
     getData() {
         let page = this;
         wx.request({
@@ -67,7 +121,7 @@ Page({
             this.mapCtx.moveToLocation()
           
             this.mapCtx.translateMarker({
-              markerId: 0,
+              markerId: 1,
               autoRotate: true,
               duration: 1000,
               destination: {

@@ -1,7 +1,7 @@
 <!--pages/venues/index.wxml-->
 <view class="main">
     <view>
-        <map id="myMap" class="my-map-design" show-location>
+        <map id="myMap" class="my-map-design" show-location markers="{{markers}}" covers="{{covers}}">
             <!-- <cover-view slot="callout">
                 <cover-view marker-id="1"></cover-view>
                 <cover-view marker-id="2"></cover-view>

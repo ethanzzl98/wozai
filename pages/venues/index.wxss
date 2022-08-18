@@ -57,3 +57,13 @@
     font-size: 34rpx;
     margin-bottom: 6rpx;
 }
+
+.markerId {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.markers {
+    width: 30rpx;
+    height: 30rpx;
+}
