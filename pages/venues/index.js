@@ -14,7 +14,7 @@ Page({
     onLoad(options) {
 
       wx.showLoading({
-        title: 'Loading ',
+        title: 'Loading',
       })
       
       setTimeout(function () {
@@ -33,7 +33,7 @@ Page({
             page.setData({
               venues: venues,
             });
-            console.log(page.data)
+            // console.log(page.data)
           }
         })
       },
@@ -89,12 +89,17 @@ Page({
           }
         },
     
-    goToShow(e) {
+    goToVenue(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
-        wx.switchTab({
-          url: '/pages/venues/show',
+        wx.navigateTo({
+          url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
         })
+        // const id = e.currentTarget.dataset.index;
+        // app.globalData.venue_id = id;
+        // wx.switchTab({
+        //   url: '/pages/venues/show',
+        // })
     },
     onHide() {
 
