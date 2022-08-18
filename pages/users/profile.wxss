@@ -10,7 +10,7 @@ page {
 }
 
 page, view {
-    border: 5rpx dashed black;
+    border: 0rpx dashed black;
 }
 
 .header-circle {
