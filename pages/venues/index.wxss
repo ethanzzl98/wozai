@@ -24,7 +24,7 @@
 }
 
 .card-venue {
-    height: 250rpx;
+    height: 350rpx;
     width: auto;
     margin-top: 40rpx;
     margin-bottom: 40rpx;
@@ -36,15 +36,16 @@
 .venue-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 140rpx 20rpx;
+    align-items: center;
+    margin: 0 20rpx;
+    margin-top: 260rpx;
 }
 
-.venue-name, .venue-address {
+.venue-name{
     color: white;
     font-weight: 600;
-    font-size: 34rpx;
-    text-shadow: 2rpx 2rpx 4rpx rgb(57,72,103);
+    font-size: 40rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgb(57,72,103);
 }
 
 .venue-distance {

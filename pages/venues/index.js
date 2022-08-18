@@ -8,13 +8,6 @@ Page({
     data: {
 
     },
-
-    /**
-     * Lifecycle function--Called when page load
-     */
-    onLoad(options) {
-
-    },
     getData() {
         let page = this;
         wx.request({
@@ -38,9 +31,7 @@ Page({
           wx.event.on('loginFinish', page, page.getData)
         }
       },
-    /**
-     * Lifecycle function--Called when page is initially rendered
-     */
+
     onReady: {
         function (e) {
             // Use wx.createMapContext to obtain the map context
@@ -83,14 +74,14 @@ Page({
             })
           }
         },
-
-    /**
-     * Lifecycle function--Called when page show
-     */
-
-    /**
-     * Lifecycle function--Called when page hide
-     */
+    
+    goToShow(e) {
+        const id = e.currentTarget.dataset.index;
+        app.globalData.venue_id = id;
+        wx.switchTab({
+          url: '/pages/venues/show',
+        })
+    },
     onHide() {
 
     },

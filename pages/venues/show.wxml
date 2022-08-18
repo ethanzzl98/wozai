@@ -1,47 +1,52 @@
 <!--pages/venues/show.wxml-->
 <view class="main">
     <view class="card-venue">
-        <view class="venue-image" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(https://www.thatsmags.com/image/view/201901/Odd-Couple-interior.jpg); background-size: cover;">
-            <view class="venue-title">Malabar</view>
+        <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
+            <view class="venue-title">{{venue.name}}</view>
         </view>
         <view class="card-venue-info-top">
             <view class="info-header">ADDRESS</view>
-            <view class="info-content">Wuding Rd 1081</view>
+            <view class="info-content">{{venue.address}}</view>
             <view class="info-header">PHONE</view>
-            <view class="info-content">131-2263-0107</view>
+            <view class="info-content">{{venue.phone}}</view>
         </view>
         <view class="card-venue-info-bottom">
             <view>
                 <view class="info-header">OPENING HOURS</view>
-                <view class="time">12 pm - 2 am</view>
+                <view class="time">{{venue.open_time}} - {{venue.close_time}}</view>
             </view>
             <view class="tag">restaurant</view>
         </view>
         <view class="leaderboard-title">Leaderboard</view>
         <view class="leaderboard">
-            <view class="second-place">
+            <view class="be-first" wx:if="{{leaders.length === 0}}">Be the first to check-in!</view>
+            <view class="second-place" wx:if="{{leaders.length > 1}}">
                 <image class="avatar" src="/images/avatar.png"></image>
                 <view class="visits">
-                    <view class="number">50</view>
-                    <view class="p">visits</view>
+                    <view class="number">{{leaders[1].number_of_visits}}</view>
+                    <view class="p">{{leaders[1].nickname}}</view>
                 </view>
             </view>
-            <view class="first-place">
+            <view class="second-place" wx:else></view>
+            <view class="first-place" wx:if="{{leaders.length > 0}}">
                 <image class="avatar" src="/images/avatar.png"></image>
                 <image class="crown" src="/images/crown.png"></image>
                 <view class="visits">
-                    <view class="number">100</view>
-                    <view class="p">visits</view>
+                    <view class="number">{{leaders[0].number_of_visits}}</view>
+                    <view class="p">{{leaders[0].nickname}}</view>
                 </view>
             </view>
-            <view class="third-place">
+            <view class="first-place" wx:else>
+            </view>
+            <view class="third-place" wx:if="{{leaders.length === 3}}">
                 <image class="avatar" src="/images/avatar.png"></image>
                 <view class="visits">
-                    <view class="number">25</view>
-                    <view class="p">visits</view>
+                    <view class="number">{{leaders[2].number_of_visits}}</view>
+                    <view class="p">{{leaders[2].nickname}}</view>
                 </view>
             </view>
+            <view class="third-place" wx:else></view>
         </view>
     </view>
-    <view class="button">我在!</view>
+    <view class="button" bindtap="checkin">我在!</view>
 </view>
