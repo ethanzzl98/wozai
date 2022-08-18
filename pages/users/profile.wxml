@@ -1,2 +1,28 @@
 <!--pages/users/profile.wxml-->
-<text>pages/users/profile.wxml</text>
+<view class="main">
+    <view class="header">
+    <view class="header-circle"></view>
+        <view class="user-info">
+            <view class="user-avatar" style="background-image: url({{avatarUrl}});background-repeat: no-repeat;background-size:100%;">
+            </view>
+            <view class="user-nickname">{{nickname}}</view>
+            <button id="user-update" bindtap="getUserProfile">Update</button>
+        </view>
+    </view>
+    <view class="options-container">
+        <view class="options">
+            <view class="option" bindtap="goToEdit">
+                <view class="option-icon" style="background-image:url(/images/profile.png);"></view>
+                <view class="option-text">
+                    Edit Profile
+                </view>
+            </view>
+            <view class="option" bindtap="getUserProfile">
+                <view class="option-icon" style="background-image:url(/images/barchart.png);"></view>
+                <view class="option-text">
+                    Recent visits
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,1 +1,68 @@
 /* pages/users/profile.wxss */
+page {
+    --header-radius: 300rpx;
+    --avatar-radius: 150rpx;
+    --nickname-font-size: 50rpx;
+}
+
+page, view {
+    border: 0rpx dashed black;
+}
+
+.header-circle {
+    position: absolute;
+    left: 0;
+    top: calc(var(--header-radius) * -1);
+    width: 100%;
+    height: calc(var(--header-radius) * 2);
+    z-index: 1;
+    background-color: var(--theme-blue);
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc(var(--header-radius) - var(--avatar-radius) - var(--page-padding));
+    z-index: 2;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: calc(var(--avatar-radius) * 2);
+    height:calc(var(--avatar-radius) * 2);
+    z-index: 2;
+}
+
+.user-nickname {
+    font-size: var(--nickname-font-size);
+}
+
+#user-update {
+    display: absolute;
+    left: 0;
+}
+
+.options-container {
+    border-radius: 30rpx;
+    min-height: 100rpx;
+    padding: 50rpx;
+}
+
+.option {
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+.option:not(:last-child) {
+    margin-bottom: 50rpx;
+}
+
+.option-icon {
+    margin: 50rpx;
+    height: 75rpx;
+    width: 75rpx;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
