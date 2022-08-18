@@ -6,10 +6,13 @@
             <view class="user-avatar" style="background-image: url({{avatarUrl}});background-repeat: no-repeat;background-size:100%;">
             </view>
             <view class="user-nickname">{{nickname}}</view>
-            <button id="user-update" bindtap="getUserProfile">Update</button>
+            
         </view>
     </view>
-    <view class="options-container">
+    <view wx:if="{{!isLogin}}" class="login-container">
+        <button class="login" bindtap="getUserProfile">Login</button>
+    </view>
+    <!-- <view class="options-container">
         <view class="options">
             <view class="option" bindtap="goToEdit">
                 <view class="option-icon" style="background-image:url(/images/profile.png);"></view>
@@ -24,5 +27,5 @@
                 </view>
             </view>
         </view>
-    </view>
+    </view> -->
 </view>
