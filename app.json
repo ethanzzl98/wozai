@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/loading/index",
     "pages/venues/index",
     "pages/venues/show",
     "pages/index/index",
