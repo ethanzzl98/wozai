@@ -8,6 +8,20 @@ Page({
     data: {
 
     },
+    /**
+     * Lifecycle function--Called when page load
+     */
+    onLoad(options) {
+
+      wx.showLoading({
+        title: 'Loading ',
+      })
+      
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1500)
+
+    },
     getData() {
         let page = this;
         wx.request({

@@ -31,7 +31,7 @@ App({
   globalData: {
     header: null,
     // baseUrl: 'https://our-learners-loft.herokuapp.com/api/v1',
-    baseUrl: 'http://localhost:3000/api/v1',
+    // baseUrl: 'http://localhost:3000/api/v1',
     user: null
   }
 })
