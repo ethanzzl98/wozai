@@ -3,9 +3,11 @@
     "pages/landing/index",
     "pages/venues/index",
     "pages/venues/show",
+    "pages/fake/loading/index",
+    "pages/fake/venues/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/fake/venues/index"
+    "pages/users/profile"
   ],
   "window": {
     "backgroundTextStyle":"light",
@@ -24,13 +26,10 @@
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_active.png"
     }, {
-        "pagePath": "pages/venues/show",
+        "pagePath": "pages/users/profile",
         "text": "Profile",
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile_active.png"
-    }, {
-        "pagePath": "pages/fake/venues/index",
-        "text": "fakeVenues"
     }]
   },
   "permission": {
