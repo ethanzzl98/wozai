@@ -1,7 +1,12 @@
 <!--pages/venues/index.wxml-->
 <view class="main">
     <view>
-        <map id="myMap" class="my-map-design" show-location></map>
+        <map id="myMap" class="my-map-design" show-location>
+            <cover-view slot="callout">
+                <cover-view marker-id="1"></cover-view>
+                <cover-view marker-id="2"></cover-view>
+            </cover-view>
+        </map>
     </view>
     <view class="search">Search</view>
     <view class="card-venue" style="background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(http://cyprusfortravellers.net/sites/default/files/u9/pubs_in_limassol_6.jpg); background-size: cover;">
