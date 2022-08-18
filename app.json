@@ -5,7 +5,8 @@
     "pages/venues/show",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/fake/venues/index"
+    "pages/fake/venues/index",
+    "pages/fake/loading/index"
   ],
   "window": {
     "backgroundTextStyle":"light",
