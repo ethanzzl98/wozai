@@ -2,10 +2,10 @@
 <view class="main">
     <view>
         <map id="myMap" class="my-map-design" show-location>
-            <cover-view slot="callout">
+            <!-- <cover-view slot="callout">
                 <cover-view marker-id="1"></cover-view>
                 <cover-view marker-id="2"></cover-view>
-            </cover-view>
+            </cover-view> -->
         </map>
     </view>
     <view class="search">Search</view>

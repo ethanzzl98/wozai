@@ -1,4 +1,11 @@
 // pages/venues/index.js
+const key = 'LF7BZ-EFY3X-EKR46-TQDA2-CJE43-5BBXH'; //使用在腾讯位置服务申请的key
+const referer = 'Wozai'; //调用插件的app的名称
+// const location = JSON.stringify({
+//   latitude: 31.233827538484224, 
+//   longitude: 121.43734040846482
+// });
+const category = '生活服务,娱乐休闲';
 const app = getApp()
 Page({
 
@@ -12,7 +19,7 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
-
+    
       wx.showLoading({
         title: 'Loading ',
       })
@@ -46,23 +53,19 @@ Page({
         }
       },
 
-    onReady: {
-        function (e) {
+    onReady() {
             // Use wx.createMapContext to obtain the map context
-            this.mapCtx = wx.createMapContext('myMap')
-        },
-        getCenterLocation: function () {
+           this.mapCtx = wx.createMapContext('myMap')
+
             this.mapCtx.getCenterLocation({
               success: function(res){
-                console.log(res.longitude)
-                console.log(res.latitude)
+                console.log({res})
+                // console.log(res.latitude)
               }
             })
-          },
-          moveToLocation: function () {
+
             this.mapCtx.moveToLocation()
-          },
-          translateMarker: function() {
+          
             this.mapCtx.translateMarker({
               markerId: 0,
               autoRotate: true,
@@ -74,8 +77,6 @@ Page({
                 console.log('animation end')
               }
             })
-          },
-          includePoints: function() {
             this.mapCtx.includePoints({
               padding: [10],
             //   points: [{
@@ -86,9 +87,12 @@ Page({
             //     longitude:113.3345211,
             //   }]
             })
-          }
+            // wx.navigateTo({
+            //     url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location + '&category=' + category
+            //   });
         },
     
+        
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
