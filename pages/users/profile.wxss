@@ -45,15 +45,6 @@ page, view {
     font-size: var(--nickname-font-size);
 }
 
-.user-update {
-    position: absolute;
-    right: 0;
-    bottom: ;
-    width: var(--button-width);
-    height: var(--button-width);
-    background-size: 100%;
-}
-
 .login-container {
     padding-top: 200rpx;
 }
