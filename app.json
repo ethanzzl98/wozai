@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/landing/index",
     "pages/venues/index",
     "pages/venues/show",
+    "pages/users/profile",
     "pages/index/index",
     "pages/logs/logs",
     "pages/fake/venues/index",
-    "pages/fake/loading/index"
+    "pages/fake/loading/index",
+    "pages/landing/index"
   ],
   "window": {
     "backgroundTextStyle":"light",
@@ -28,8 +29,10 @@
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile_active.png"
     }, {
-        "pagePath": "pages/fake/venues/index",
-        "text": "fakeVenues"
+        "pagePath": "pages/users/profile",
+        "text": "Profile",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile_active.png"
     }]
   },
   "style": "v2",
