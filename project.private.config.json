@@ -17,14 +17,14 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/venues/index",
+                    "pathName": "pages/venues/show",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
                     "name": "",
-                    "pathName": "pages/landing/index",
+                    "pathName": "pages/venues/index",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
