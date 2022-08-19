@@ -58,8 +58,12 @@
     border-radius: 25px;
     border: 2rpx solid var(--theme-blue);
     font-size: 32rpx;
-    margin-bottom: 4rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
     font-weight: 500;
+    width: fit-content;
 }
 
 .leaderboard-title {
