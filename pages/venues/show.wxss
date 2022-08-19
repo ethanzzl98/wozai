@@ -10,10 +10,13 @@
 .venue-image {
     height: 300rpx;
     width: 100%;
+    position: relative
 }
 
 .venue-title {
-    padding: 220rpx 20rpx;
+    position: absolute;
+    bottom: 10rpx;
+    left: 20rpx;
     color: white;
     font-weight: 600;
     font-size: 54rpx;
