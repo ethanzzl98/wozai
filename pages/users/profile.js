@@ -48,6 +48,7 @@ Page({
           data: body,
           success(res) {
               console.log("user profile updated")
+              page.getData()
           }
         })
     },
