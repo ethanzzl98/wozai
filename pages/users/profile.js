@@ -55,7 +55,21 @@ Page({
     onLoad(options) {
 
     },
-
+    getData () {
+        let page = this;
+        wx.request({
+            url: `${app.globalData.baseUrl}/venues`,
+            method: 'GET',
+            header: app.globalData.header,
+            success(res) {
+                console.log(res);
+                const venues = res.data;
+                page.setData({
+                venues: venues,
+                });
+            }
+        })
+    },
     /**
     onReady() {
 
@@ -81,6 +95,7 @@ Page({
             isLogin: this.data.nickname !== defaultNickname
         })
         console.log(this.data)
+        this.getData()
     },
 
     /**
