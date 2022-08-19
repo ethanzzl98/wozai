@@ -14,47 +14,65 @@ Page({
      */
     data: {
         
-        markers: [{
-            latitude: 31.233442,
-            longitude: 121.437512,
-            name: 'Le Wagon',
-            desc: '我现在的位置'
-        },{
-            latitude: 31.234511,
-            longitude: 121.45017,
-            name: 'The Shed',
-            desc: '我现在的位置'
-        },{
-            latitude: 23.099994,
-            longitude: 113.324520,
-            name: 'T.I.T 创意园',
-            desc: '我现在的位置'
-        },
-        {
-            latitude: 23.099994,
-            longitude: 113.324520,
-            name: 'T.I.T 创意园',
-            desc: '我现在的位置'
-        },
-        {
-            latitude: 23.099994,
-            longitude: 113.324520,
-            name: 'T.I.T 创意园',
-            desc: '我现在的位置'
-        }
-    ],
-        covers: [{
-            latitude: 31.233442,
-            longitude: 121.437512,
-            iconPath: '../../images/wechart.png',
-            rotate: 10
-        }, {
-            latitude: 31.234511,
-            longitude: 121.45017,
-            iconPath: '../../images/wechart.png',
-            rotate: 90
-            }]
-          
+    //     markers: [{
+    //         latitude: 31.233442,
+    //         longitude: 121.437512,
+    //         name: 'Le Wagon',
+    //     },{
+    //         latitude: 31.234511,
+    //         longitude: 121.45017,
+    //         name: 'The Shed',
+    //     },{
+    //         latitude: 31.23508,
+    //         longitude: 121.44653,
+    //         name: 'The Grand Yard',
+    //     },
+    //     {
+    //         latitude: 31.235167,
+    //         longitude: 121.450486,
+    //         name: 'Gin & Juice',
+    //     },
+    //     {
+    //         latitude: 31.21586,
+    //         longitude: 121.45579,
+    //         name: 'Liquid Laundry',
+    //     },
+    //     {
+    //         latitude: 31.216576,
+    //         longitude: 121.456041,
+    //         name: 'Beef & Liberty',
+    //     },
+    //     {
+    //         latitude: 31.229142,
+    //         longitude: 121.45579,
+    //         name: 'Fat Cow',
+    //     },
+    //     {
+    //         latitude: 31.20451,
+    //         longitude: 121.4306,
+    //         name: 'Pie Society',
+    //     },
+    //     {
+    //         latitude: 31.229115,
+    //         longitude: 121.45435,
+    //         name: 'Brothers Kebab',
+    //     },
+    //     {
+    //         latitude: 31.21085,
+    //         longitude: 121.44313,
+    //         name: 'Boxing Cat Brewery',
+    //     },
+    //     {
+    //         latitude: 31.215026,
+    //         longitude: 121.44168,
+    //         name: 'New York Pizza',
+    //     },
+    //     {
+    //         latitude: 31.239912,
+    //         longitude: 121.466442,
+    //         name: 'The Beer Lady',
+    //     },
+    // ]   
     },
     /**
      * Lifecycle function--Called when page load
@@ -91,8 +109,10 @@ Page({
           header: app.globalData.header,
           success(res) {
             const {venues} = res.data;
+            const markers = venues;
             page.setData({
               venues: venues,
+              markers: markers
             });
             // console.log(page.data)
           }
