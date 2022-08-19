@@ -98,20 +98,26 @@ Page({
 
     actualCheckIn(id){
         let page = this
-        wx.request({
-            url:`${app.globalData.baseUrl}/venues/${id}/checkins`,
-            method: "POST",
-            header: app.globalData.header,
-            success(res) {
-                console.log('res data from check-in post ',res.data);
-                page.setData({ leaders: res.data.leaders})
-            }
-        }),
         wx.showModal({
             title: "Check-in?",
             content: 'Would you like to check in here?',
             success (res) {
               if (res.confirm) {
+                wx.request({
+                    url:`${app.globalData.baseUrl}/venues/${id}/checkins`,
+                    method: "POST",
+                    header: app.globalData.header,
+                    success(res) {
+                        console.log('res data from check-in post ',res.data);
+                        page.setData({ leaders: res.data.leaders})
+                        wx.showToast({
+                          title: 'Checked-in',
+                          duration: 2000,
+                          icon: 'success'
+                        })
+                    }
+                })
+
               } else if (res.cancel) {
               }
             }
