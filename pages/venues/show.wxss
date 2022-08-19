@@ -117,6 +117,7 @@
     width: 100rpx;
     position: absolute;
     top: -100rpx;
+    border-radius: 50%;
 }
 
 .be-first {
