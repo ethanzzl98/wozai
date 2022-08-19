@@ -142,7 +142,7 @@ Page({
         },
     
         
-    goToVenue(e) {
+    goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
         wx.navigateTo({
