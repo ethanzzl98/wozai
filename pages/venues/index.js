@@ -13,22 +13,94 @@ Page({
      * Page initial data
      */
     data: {
-
+        
+    //     markers: [{
+    //         latitude: 31.233442,
+    //         longitude: 121.437512,
+    //         name: 'Le Wagon',
+    //     },{
+    //         latitude: 31.234511,
+    //         longitude: 121.45017,
+    //         name: 'The Shed',
+    //     },{
+    //         latitude: 31.23508,
+    //         longitude: 121.44653,
+    //         name: 'The Grand Yard',
+    //     },
+    //     {
+    //         latitude: 31.235167,
+    //         longitude: 121.450486,
+    //         name: 'Gin & Juice',
+    //     },
+    //     {
+    //         latitude: 31.21586,
+    //         longitude: 121.45579,
+    //         name: 'Liquid Laundry',
+    //     },
+    //     {
+    //         latitude: 31.216576,
+    //         longitude: 121.456041,
+    //         name: 'Beef & Liberty',
+    //     },
+    //     {
+    //         latitude: 31.229142,
+    //         longitude: 121.45579,
+    //         name: 'Fat Cow',
+    //     },
+    //     {
+    //         latitude: 31.20451,
+    //         longitude: 121.4306,
+    //         name: 'Pie Society',
+    //     },
+    //     {
+    //         latitude: 31.229115,
+    //         longitude: 121.45435,
+    //         name: 'Brothers Kebab',
+    //     },
+    //     {
+    //         latitude: 31.21085,
+    //         longitude: 121.44313,
+    //         name: 'Boxing Cat Brewery',
+    //     },
+    //     {
+    //         latitude: 31.215026,
+    //         longitude: 121.44168,
+    //         name: 'New York Pizza',
+    //     },
+    //     {
+    //         latitude: 31.239912,
+    //         longitude: 121.466442,
+    //         name: 'The Beer Lady',
+    //     },
+    // ]   
     },
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
     
-      wx.showLoading({
-        title: 'Loading',
-      })
+      
       
       setTimeout(function () {
         wx.hideLoading()
       }, 1500)
 
+      this.mapContext = wx.createMapContext('myMap');
+
+        var that = this
+        wx.getLocation({
+            type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+            success: function (res) {
+              console.log(res)
+                var latitude = res.latitude; 
+                var longitude = res.longitude; 
+                
+            }
+        });
+    
     },
+
+    
     getData() {
         let page = this;
         wx.request({
@@ -37,8 +109,10 @@ Page({
           header: app.globalData.header,
           success(res) {
             const {venues} = res.data;
+            const markers = venues;
             page.setData({
               venues: venues,
+              markers: markers
             });
             // console.log(page.data)
           }
@@ -67,7 +141,7 @@ Page({
             this.mapCtx.moveToLocation()
           
             this.mapCtx.translateMarker({
-              markerId: 0,
+              markerId: 1,
               autoRotate: true,
               duration: 1000,
               destination: {

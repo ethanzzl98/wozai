@@ -1,6 +1,7 @@
 // pages/users/profile.js
 const app = getApp();
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0';
+const defaultNickname = 'Wechat User';
 Page({
 
     /**
@@ -23,7 +24,8 @@ Page({
           success: (res) => {
             page.setData({
                 avatarUrl: res.userInfo.avatarUrl,
-                nickname: res.userInfo.nickName
+                nickname: res.userInfo.nickName,
+                isLogin: true
             })
             app.globalData.user.avatar_url = page.data.avatarUrl;
             app.globalData.user.nickname = page.data.nickname;
@@ -77,10 +79,20 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        console.log('show')
+        console.log('show')    
         this.setData({
             avatarUrl: app.globalData.user.avatar_url || defaultAvatarUrl,
-            nickname: app.globalData.user.nickname || 'Wechat User'
+            nickname: app.globalData.user.nickname || defaultNickname,
+        })
+        const defaultNotLogin = true;
+        if (defaultNotLogin) {
+            this.setData({
+                avatarUrl: defaultAvatarUrl,
+                nickname: defaultNickname,
+            })
+        }
+        this.setData({
+            isLogin: this.data.nickname !== defaultNickname
         })
         console.log(this.data)
         this.getData()
