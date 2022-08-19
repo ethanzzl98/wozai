@@ -2,9 +2,9 @@
 
 
 <view class="pics">
-    <image class="images" mode="widthFix" src="/images/landing1.jpeg"></image>
-    <image class="images" mode="widthFix" src="/images/landing2.jpeg"></image>
-    <image class="images" mode="widthFix" src="/images/landing3.jpeg"></image>
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing1.jpeg"></image>
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing2.jpeg"></image>
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing3.jpeg"></image>
     <view class="clear-container" >
         <view class="dark-square"></view>
         <image class="landing-page-logo" src="/images/logo.png"></image>
