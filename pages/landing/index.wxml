@@ -5,13 +5,16 @@
     <image class="images" mode="widthFix" src="/images/landing1.jpeg"></image>
     <image class="images" mode="widthFix" src="/images/landing2.jpeg"></image>
     <image class="images" mode="widthFix" src="/images/landing3.jpeg"></image>
-    <view class="clear-container" >
-        <view class="dark-square"></view>
-        <image class="landing-page-logo" src="/images/logo.png"></image>
+    <view class="clear-container">
+        <view style="display: flex; justify-content: center; align-items: center;">
+            <view class="dark-square">
+                <image class="landing-page-logo" src="/images/logo.png"></image>
+            </view>
+        </view>
+    <view class="index">{{venues.index}}</view>
+        <button class="btn-enter" bindtap="enterIndex">Enter</button>
     </view>
-<view class="index">{{venues.index}}</view>
-    <button class="btn-enter" bindtap="enterIndex">Enter</button>
-</view>
+    </view>
 
 
 

@@ -2,6 +2,7 @@
 
 .pics {
     position: relative;
+
 }
 
 .images {
@@ -11,30 +12,38 @@
 }
 
 .dark-square {
-    width: 60vw;
+    /* width: 450rpx; */
     height: 35vh;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 60px;
-    /* z-index: 2; */
-    /* position: absolute;  */
-    position: relative;
+    /* background: rgba(0, 0, 0, 0.8); */
+    /* border-radius: 60px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .landing-page-logo {
-    width: 60vw;
-    /* height: 50vh;  */
+    /* width: 60vw; */
+    height: 400rpx; 
     border-radius: 0px;
     position: absolute;
     width: 50%;
     /* z-index: 2; */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40rpx 0;
+    border-radius: 25px;
+
 }
 
 .clear-container {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: -620px;
+    /* align-items: center; */
+    /* margin-top: -620px; */
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
 }
 
 .btn-enter {
@@ -43,4 +52,5 @@
     border-radius: 50rpx;
     box-shadow: 0 0 10rpx #0c0c0c;
     margin-top: 50rpx;
+    width: 50% !important;
   }
