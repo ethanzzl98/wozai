@@ -58,12 +58,11 @@ Page({
     getData () {
         let page = this;
         wx.request({
-            url: `${app.globalData.baseUrl}/venues`,
+            url: `${app.globalData.baseUrl}/users/recent`,
             method: 'GET',
             header: app.globalData.header,
             success(res) {
-                console.log(res);
-                const venues = res.data;
+                const venues = res.data.recents;
                 page.setData({
                 venues: venues,
                 });
