@@ -62,7 +62,18 @@ Page({
             success(res) {
                 console.log(res.data);
             }
-        })
+        }),
+        wx.showModal({
+            title: "Check-in?",
+            content: 'Would you like to check in here?',
+            success (res) {
+              if (res.confirm) {
+                
+              } else if (res.cancel) {
+                
+              }
+            }
+          })
     },
     /**
      * Lifecycle function--Called when page hide

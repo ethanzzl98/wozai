@@ -48,5 +48,5 @@
             <view class="third-place" wx:else></view>
         </view>
     </view>
-    <view class="checkin-button" bindtap="checkin">我在!</view>
+    <view class="checkin-button" bindtap="checkin">Check-in</view>
 </view>

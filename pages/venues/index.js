@@ -66,17 +66,17 @@ Page({
 
             this.mapCtx.moveToLocation()
           
-            this.mapCtx.translateMarker({
-              markerId: 0,
-              autoRotate: true,
-              duration: 1000,
-              destination: {
+            // this.mapCtx.translateMarker({
+            //   markerId: 0,
+            //   autoRotate: true,
+            //   duration: 1000,
+            //   destination: {
                 
-              },
-              animationEnd() {
-                console.log('animation end')
-              }
-            })
+            //   },
+            //   animationEnd() {
+            //     console.log('animation end')
+            //   }
+            // })
             this.mapCtx.includePoints({
               padding: [10],
             //   points: [{
@@ -93,7 +93,7 @@ Page({
         },
     
         
-    goToShow(e) {
+    goToVenue(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
         wx.navigateTo({
