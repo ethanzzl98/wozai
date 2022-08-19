@@ -6,27 +6,20 @@ Page({
      * Page initial data
      */
     data: {
-
+        leaders: []
     },
 
     /**
      * Lifecycle function--Called when page load
      */
-    onLoad(options) {
-        
+    onLoad: (options) => {
+
     },
 
     /**
      * Lifecycle function--Called when page is initially rendered
      */
     onReady() {
-
-    },
-
-    /**
-     * Lifecycle function--Called when page show
-     */
-    onShow() {
         const page = this;
         const id = app.globalData.venue_id;
         wx.request({
@@ -50,7 +43,13 @@ Page({
                 })
             }
         });
-        
+    },
+
+    /**
+     * Lifecycle function--Called when page show
+     */
+    onShow() {
+
     },
 
     checkin() {
