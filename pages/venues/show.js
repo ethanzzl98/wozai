@@ -7,6 +7,7 @@ Page({
      */
     data: {
         leaders: [],
+        active: true
     },
 
     /**
@@ -109,7 +110,11 @@ Page({
                     header: app.globalData.header,
                     success(res) {
                         console.log('res data from check-in post ',res.data);
-                        page.setData({ leaders: res.data.leaders})
+                        page.setData({ 
+                            leaders: res.data.leaders,
+                            active: false
+                        })
+                        
                         wx.showToast({
                           title: 'Checked-in',
                           duration: 2000,
