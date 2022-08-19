@@ -78,9 +78,6 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
-    
-      
-      
       setTimeout(function () {
         wx.hideLoading()
       }, 1500)
@@ -141,7 +138,7 @@ Page({
         },
     
         
-    goToVenue(e) {
+    goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
         wx.navigateTo({
