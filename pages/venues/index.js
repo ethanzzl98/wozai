@@ -76,7 +76,6 @@ Page({
               console.log(res)
                 var latitude = res.latitude; 
                 var longitude = res.longitude; 
-                
             }
         });
     
