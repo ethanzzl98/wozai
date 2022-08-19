@@ -56,5 +56,5 @@
             <view class="third-place" wx:else></view>
         </view>
     </view>
-    <view class="checkin-button" style="margin-bottom: 40rpx" bindtap="checkin">Check-in!</view>
+    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">Check-in!</view>
 </view>
