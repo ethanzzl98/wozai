@@ -10,9 +10,9 @@
     <view wx:if="{{isLogin}}">
         <view class="title">Recent visits</view>
         <swiper class="recents-swiper">
-            <swiper-item class="swiper-item" wx:for="{{venues.venues}}" data-index="{{item.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
+            <swiper-item class="swiper-item" wx:for="{{venues}}" data-index="{{item.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
                     <view class="venue-title">{{item.name}}</view>
-                    <view class="venue-visits">25 visits</view>
+                    <view class="venue-visits">{{item.number_of_visits}} visits</view>
             </swiper-item>
         </swiper>
     </view>

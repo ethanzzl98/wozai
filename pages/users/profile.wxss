@@ -83,6 +83,7 @@ page, view {
 }
 
 .swiper-item {
+    box-sizing: border-box;
     width: auto;
     height: 300rpx;
     border: 2rpx solid rgb(57,72,103);

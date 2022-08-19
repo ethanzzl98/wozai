@@ -78,9 +78,6 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
-    
-      
-      
       setTimeout(function () {
         wx.hideLoading()
       }, 1500)
@@ -94,7 +91,6 @@ Page({
               console.log(res)
                 var latitude = res.latitude; 
                 var longitude = res.longitude; 
-                
             }
         });
     
