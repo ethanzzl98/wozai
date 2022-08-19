@@ -11,12 +11,6 @@ Page({
 
     },
 
-    goToEdit() {
-        wx.navigateTo({
-          url: '/pages/users/edit',
-        })
-    },
-
     getUserProfile(e) {
         const page = this;
         wx.getUserProfile({
@@ -51,10 +45,7 @@ Page({
           }
         })
     },
-    
-    onLoad(options) {
 
-    },
     getData () {
         let page = this;
         wx.request({
@@ -69,14 +60,7 @@ Page({
             }
         })
     },
-    /**
-    onReady() {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow() {
         console.log('show')    
         this.setData({
@@ -95,27 +79,5 @@ Page({
         })
         console.log(this.data)
         this.getData()
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    onUnload() {
-
-    },
-    onPullDownRefresh() {
-
-    },
-
-    onReachBottom() {
-
-    },
-
-    onShareAppMessage() {
-
     }
 })
