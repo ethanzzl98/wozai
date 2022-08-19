@@ -2,9 +2,10 @@
 
 
 <view class="pics">
-    <image class="images" mode="widthFix" src="/images/landing1.jpeg"></image>
-    <image class="images" mode="widthFix" src="/images/landing2.jpeg"></image>
-    <image class="images" mode="widthFix" src="/images/landing3.jpeg"></image>
+
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing1.jpeg"></image>
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing2.jpeg"></image>
+    <image class="images" mode="widthFix" src="https://wozai-lewagon.oss-cn-shanghai.aliyuncs.com/landing3.jpeg"></image>
     <view class="clear-container">
         <view style="display: flex; justify-content: center; align-items: center;">
             <view class="dark-square">
@@ -14,7 +15,7 @@
     <view class="index">{{venues.index}}</view>
         <button class="btn-enter" bindtap="enterIndex">Enter</button>
     </view>
-    </view>
+</view>
 
 
 
