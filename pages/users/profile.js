@@ -84,7 +84,7 @@ Page({
             avatarUrl: app.globalData.user.avatar_url || defaultAvatarUrl,
             nickname: app.globalData.user.nickname || defaultNickname,
         })
-        const defaultNotLogin = true;
+        const defaultNotLogin = false;
         if (defaultNotLogin) {
             this.setData({
                 avatarUrl: defaultAvatarUrl,
