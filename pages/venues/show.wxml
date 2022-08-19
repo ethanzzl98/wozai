@@ -4,18 +4,24 @@
         <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
             <view class="venue-title">{{venue.name}}</view>
         </view>
+        <view style="display: flex; flex-wrap: wrap;">
+            <block wx:for="{{venue.categories}}">
+                <view class="tag">{{item}}</view>
+            </block>
+        </view>
         <view class="card-venue-info-top">
             <view class="info-header">ADDRESS</view>
             <view class="info-content">{{venue.address}}</view>
             <view class="info-header">PHONE</view>
             <view class="info-content">{{venue.phone}}</view>
+            <view class="info-header">NOTES</view>
+            <view class="info-content">{{venue.discount}}</view>
         </view>
         <view class="card-venue-info-bottom">
             <view>
                 <view class="info-header">OPENING HOURS</view>
                 <view class="time">{{venue.open_time}} - {{venue.close_time}}</view>
             </view>
-            <view class="tag">restaurant</view>
         </view>
         <view class="leaderboard-title">Leaderboard</view>
         <view class="leaderboard">
@@ -48,5 +54,5 @@
             <view class="third-place" wx:else></view>
         </view>
     </view>
-    <view class="checkin-button" bindtap="checkin">Check-in</view>
+    <view class="checkin-button" style="margin-bottom: 40rpx" bindtap="checkin">Check-in!</view>
 </view>

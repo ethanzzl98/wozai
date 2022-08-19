@@ -1,1 +1,115 @@
 /* pages/users/profile.wxss */
+page {
+    --header-radius: 300rpx;
+    --avatar-radius: 150rpx;
+    --nickname-font-size: 50rpx;
+    --button-width: 120rpx;
+    --button-position-right: 50rpx;
+    --button-position-bottom: 50rpx;
+    --button-background-color: #67aec0;
+}
+
+page, view {
+    border: 0rpx dashed black;
+}
+
+.header-circle {
+    position: absolute;
+    left: 0;
+    top: calc(var(--header-radius) * -1);
+    width: 100%;
+    height: calc(var(--header-radius) * 2);
+    z-index: 1;
+    background-color: var(--theme-blue);
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc(var(--header-radius) - var(--avatar-radius) - var(--page-padding));
+    z-index: 2;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: calc(var(--avatar-radius) * 2);
+    height:calc(var(--avatar-radius) * 2);
+    z-index: 2;
+    position: relative;
+}
+
+.user-nickname {
+    font-size: var(--nickname-font-size);
+}
+
+.login-container {
+    padding-top: 200rpx;
+}
+
+.login {
+    background-color: var(--button-background-color);
+    width: 250rpx;
+    height: 200rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option:not(:last-child) {
+    margin-bottom: 50rpx;
+}
+
+.option-icon {
+    margin: 50rpx;
+    height: 75rpx;
+    width: 75rpx;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: rgb(57,72,103);
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 40rpx;
+}
+
+.recents-swiper {
+    width: auto;
+    height: 300rpx;
+}
+
+.swiper-item {
+    width: auto;
+    height: 300rpx;
+    border: 2rpx solid rgb(57,72,103);
+    background-color: white;
+    border-radius: 50rpx;
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.venue-title {
+    margin-top: 180rpx;
+    margin-left: 20rpx;
+    color: white;
+    font-size: 34rpx;
+    font-weight: 500;
+}
+
+.venue-visits {
+    color: white;
+    background-color: var(--theme-blue);
+    border: 2rpx solid var(--theme-blue);
+    border-radius: 50rpx;
+    padding: 6rpx 12rpx;
+    margin-left: 20rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+}
+

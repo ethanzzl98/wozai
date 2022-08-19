@@ -35,6 +35,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/users/profile",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
