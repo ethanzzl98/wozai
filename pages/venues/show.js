@@ -32,17 +32,17 @@ Page({
                     venue: res.data,
                     leaders: res.data.leaders
                 })
-                // wx.request({
-                //     url:`${app.globalData.baseUrl}/venues/${id}/checkins`,
-                //     method: "GET",
-                //     header: app.globalData.header,
-                //     success(res) {
-                //         page.setData({
-                //             leaders: res.data.leaders
-                //         })
-                //         console.log(page.data.leaders)
-                //     }
-                // })
+                wx.request({
+                    url:`${app.globalData.baseUrl}/venues/${id}/checkins`,
+                    method: "GET",
+                    header: app.globalData.header,
+                    success(res) {
+                        page.setData({
+                            leaders: res.data.leaders
+                        })
+                        console.log(page.data.leaders)
+                    }
+                })
             }
         });
     },
@@ -112,9 +112,7 @@ Page({
             content: 'Would you like to check in here?',
             success (res) {
               if (res.confirm) {
-                
               } else if (res.cancel) {
-                
               }
             }
           })
