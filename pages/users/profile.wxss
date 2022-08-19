@@ -56,7 +56,61 @@ page, view {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 75rpx;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
 }
+
+.option:not(:last-child) {
+    margin-bottom: 50rpx;
+}
+
+.option-icon {
+    margin: 50rpx;
+    height: 75rpx;
+    width: 75rpx;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: rgb(57,72,103);
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 40rpx;
+}
+
+.recents-swiper {
+    width: auto;
+    height: 300rpx;
+}
+
+.swiper-item {
+    box-sizing: border-box;
+    width: auto;
+    height: 300rpx;
+    border: 2rpx solid rgb(57,72,103);
+    background-color: white;
+    border-radius: 50rpx;
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.venue-title {
+    margin-top: 180rpx;
+    margin-left: 20rpx;
+    color: white;
+    font-size: 34rpx;
+    font-weight: 500;
+}
+
+.venue-visits {
+    color: white;
+    background-color: var(--theme-blue);
+    border: 2rpx solid var(--theme-blue);
+    border-radius: 50rpx;
+    padding: 6rpx 12rpx;
+    margin-left: 20rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+}
+

@@ -11,12 +11,6 @@ Page({
 
     },
 
-    goToEdit() {
-        wx.navigateTo({
-          url: '/pages/users/edit',
-        })
-    },
-
     getUserProfile(e) {
         const page = this;
         wx.getUserProfile({
@@ -48,22 +42,26 @@ Page({
           data: body,
           success(res) {
               console.log("user profile updated")
+              page.getData()
           }
         })
     },
-    
-    onLoad(options) {
 
+    getData () {
+        let page = this;
+        wx.request({
+            url: `${app.globalData.baseUrl}/users/recent`,
+            method: 'GET',
+            header: app.globalData.header,
+            success(res) {
+                const venues = res.data.recents;
+                page.setData({
+                venues: venues,
+                });
+            }
+        })
     },
 
-    /**
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow() {
         console.log('show')    
         this.setData({
@@ -81,27 +79,6 @@ Page({
             isLogin: this.data.nickname !== defaultNickname
         })
         console.log(this.data)
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    onUnload() {
-
-    },
-    onPullDownRefresh() {
-
-    },
-
-    onReachBottom() {
-
-    },
-
-    onShareAppMessage() {
-
+        this.getData()
     }
 })

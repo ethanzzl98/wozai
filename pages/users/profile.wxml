@@ -1,17 +1,25 @@
 <!--pages/users/profile.wxml-->
 <view class="main">
     <view class="header">
-    <view class="header-circle"></view>
+        <view class="header-circle"></view>
         <view class="user-info">
-            <view class="user-avatar" style="background-image: url({{avatarUrl}});background-repeat: no-repeat;background-size:100%;">
-            </view>
+            <view class="user-avatar" style="background-image: url({{avatarUrl}});background-repeat: no-repeat;background-size:100%;"></view>
             <view class="user-nickname">{{nickname}}</view>
-            
         </view>
     </view>
-    <view wx:if="{{!isLogin}}" class="login-container">
+    <view wx:if="{{isLogin}}">
+        <view class="title">Recent visits</view>
+        <swiper class="recents-swiper">
+            <swiper-item class="swiper-item" wx:for="{{venues}}" data-index="{{item.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
+                    <view class="venue-title">{{item.name}}</view>
+                    <view class="venue-visits">{{item.number_of_visits}} visits</view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view wx:else class="login-container">
         <button class="login" bindtap="getUserProfile">Login</button>
     </view>
+<<<<<<< HEAD
     <view wx:else></view>
     <!-- <view class="options-container">
         <view class="options">
@@ -30,3 +38,6 @@
         </view>
     </view> -->
 </view>
+=======
+</view>
+>>>>>>> master
