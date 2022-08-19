@@ -106,7 +106,18 @@ Page({
                 console.log('res data from check-in post ',res.data);
                 page.setData({ leaders: res.data.leaders})
             }
-        })
+        }),
+        wx.showModal({
+            title: "Check-in?",
+            content: 'Would you like to check in here?',
+            success (res) {
+              if (res.confirm) {
+                
+              } else if (res.cancel) {
+                
+              }
+            }
+          })
     },
     /**
      * Lifecycle function--Called when page hide

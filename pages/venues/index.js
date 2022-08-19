@@ -139,35 +139,10 @@ Page({
             })
 
             this.mapCtx.moveToLocation()
-          
-            this.mapCtx.translateMarker({
-              markerId: 1,
-              autoRotate: true,
-              duration: 1000,
-              destination: {
-                
-              },
-              animationEnd() {
-                console.log('animation end')
-              }
-            })
-            this.mapCtx.includePoints({
-              padding: [10],
-            //   points: [{
-            //     latitude:23.10229,
-            //     longitude:113.3345211,
-            //   }, {
-            //     latitude:23.00229,
-            //     longitude:113.3345211,
-            //   }]
-            })
-            // wx.navigateTo({
-            //     url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location + '&category=' + category
-            //   });
         },
     
         
-    goToShow(e) {
+    goToVenue(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
         wx.navigateTo({
