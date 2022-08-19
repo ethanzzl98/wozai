@@ -66,3 +66,39 @@ page, view {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+.title {
+    color: rgb(57,72,103);
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 40rpx;
+}
+
+.card-venue {
+    height: 300rpx;
+    width: 250rpx;
+    border: 2rpx solid rgb(57,72,103);
+    background-color: white;
+    border-radius: 50rpx;
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.venue-title {
+    margin-top: 180rpx;
+    color: white;
+    font-size: 34rpx;
+    font-weight: 500;
+}
+
+.venue-visits {
+    color: white;
+    background-color: var(--theme-blue);
+    border: 2rpx solid var(--theme-blue);
+    border-radius: 50rpx;
+    padding: 6rpx 12rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+}
