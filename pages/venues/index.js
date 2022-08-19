@@ -144,11 +144,6 @@ Page({
         wx.navigateTo({
           url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
         })
-        // const id = e.currentTarget.dataset.index;
-        // app.globalData.venue_id = id;
-        // wx.switchTab({
-        //   url: '/pages/venues/show',
-        // })
     },
     onHide() {
 

@@ -47,6 +47,7 @@ Page({
         })
     },
 
+    // get recent vists and frequent visits
     getData () {
         let page = this;
         wx.request({
@@ -54,10 +55,23 @@ Page({
             method: 'GET',
             header: app.globalData.header,
             success(res) {
-                const venues = res.data.recents;
+                const recents = res.data.recents;
                 page.setData({
-                venues: venues,
+                    recents: recents,
                 });
+                console.log(recents)
+            }
+        });
+        wx.request({
+            url: `${app.globalData.baseUrl}/users/frequent`,
+            method: 'GET',
+            header: app.globalData.header,
+            success(res) {
+                const frequents = res.data.frequents;
+                page.setData({
+                    frequents: frequents
+                });
+                console.log("frequents:",frequents)
             }
         })
     },

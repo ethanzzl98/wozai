@@ -29,7 +29,7 @@
         <view class="leaderboard">
             <view class="be-first" wx:if="{{leaders.length === 0}}">Be the first to check-in!</view>
             <view class="second-place" wx:if="{{leaders.length > 1}}">
-                <image class="avatar" src="/images/avatar.png"></image>
+                <image class="avatar" src="{{leaders[1].avatar_url || '/images/avatar.png'}}"></image>
                 <view class="visits">
                     <view class="number">{{leaders[1].number_of_visits}}</view>
                     <view class="p">{{leaders[1].nickname}}</view>
@@ -37,7 +37,7 @@
             </view>
             <view class="second-place" wx:else></view>
             <view class="first-place" wx:if="{{leaders.length > 0}}">
-                <image class="avatar" src="/images/avatar.png"></image>
+                <image class="avatar" src="{{leaders[0].avatar_url || '/images/avatar.png'}}"></image>
                 <image class="crown" src="/images/crown.png"></image>
                 <view class="visits">
                     <view class="number">{{leaders[0].number_of_visits}}</view>
@@ -47,7 +47,7 @@
             <view class="first-place" wx:else>
             </view>
             <view class="third-place" wx:if="{{leaders.length === 3}}">
-                <image class="avatar" src="/images/avatar.png"></image>
+                <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
                 <view class="visits">
                     <view class="number">{{leaders[2].number_of_visits}}</view>
                     <view class="p">{{leaders[2].nickname}}</view>
