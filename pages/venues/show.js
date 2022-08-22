@@ -118,7 +118,7 @@ Page({
                           duration: 2000,
                           icon: 'success'
                         })
-                        page.onReady();
+                        page.getData();
                     }
                 })
 
