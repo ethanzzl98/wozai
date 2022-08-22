@@ -13,7 +13,56 @@ Page({
      * Page initial data
      */
     data: {
-        
+        array: ["Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
+    objectArray: [
+      {
+        id: 0,
+        name: "Bar"
+      },
+      {
+        id: 1,
+        name: "Beauty"
+      },
+      {
+        id: 2,
+        name: "Cafe"
+      },
+      {
+        id: 3,
+        name: "Education"
+      },
+      {
+        id: 4,
+        name: "Gym"
+      },
+      {
+        id: 5,
+        name: "Hookah"
+      },
+      {
+        id: 6,
+        name: "Museum"
+      },
+      {
+        id: 7,
+        name: "Park"
+      }
+      ,
+      {
+        id: 8,
+        name: "Restaurant"
+      }
+      ,
+      {
+        id: 9,
+        name: "Shopping"
+      }
+      ,
+      {
+        id: 10,
+        name: "Sports"
+      }
+    ],
     //     markers: [{
     //         latitude: 31.233442,
     //         longitude: 121.437512,
@@ -175,5 +224,6 @@ Page({
      */
     onShareAppMessage() {
 
-    }
+    },
+
 })
