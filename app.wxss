@@ -15,7 +15,7 @@ page {
 }
 
 .main {
-    background-color: rgb(167,181,232, 0.29);
+    background-color: rgba(167,181,232, 0.29);
     background-size: cover;
     height: 100vh;
     overflow-y: scroll;
