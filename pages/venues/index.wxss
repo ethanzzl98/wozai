@@ -31,13 +31,13 @@
     border-radius: 50rpx;
 }
 
-.venue-info {
+/* .venue-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 20rpx;
     padding-top: 260rpx;
-}
+} */
 
 .venue-name{
     position: absolute;

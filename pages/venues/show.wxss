@@ -9,7 +9,13 @@ page {
     background-size: cover;
     height: 100vh;
     overflow-y: scroll;
+    
 }
+
+.show-card::-webkit-scrollbar {
+    display: none;
+  }
+
 
 .venue-image {
     height: 400rpx;
@@ -199,9 +205,15 @@ page {
     background-color: transparent;
     border: 2rpx solid var(--theme-blue);
     border-radius: 50rpx;
-    padding: 6rpx 12rpx;
+    /* padding: 6rpx 12rpx; */
     font-size: 32rpx;
     font-weight: 500;
+    width: 70rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .p {
