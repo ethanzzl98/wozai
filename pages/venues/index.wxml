@@ -4,15 +4,11 @@
         <map id="myMap" class="my-map-designs" style="width:100%; height:100%;" show-location markers="{{markers}}" covers="{{covers}}" longitude="{{longitude}}" latitude="{{latitude}}">
         </map>
     </view>
-    <!-- <view class="search">Search</view> -->
-    <view wx:for="{{venues}}" bindtap="goToShow" data-index="{{item.id}}">
+    <view class="search">Search</view>
+    <view wx:for="{{venuesFiltered}}" bindtap="goToShow" data-index="{{item.id}}">
         <view class="card-venue" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
-            <view class="venue-info">
-                <view>
-                    <view class="venue-name">{{ item.name }}</view>
-                </view>
+            <view class="venue-name">{{ item.name }}</view>
                 <!-- <view class="venue-distance">700m</view> -->
-            </view>
         </view>
     </view>
 </view>

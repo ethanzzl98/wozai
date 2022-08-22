@@ -24,6 +24,7 @@
 }
 
 .card-venue {
+    position: relative;
     height: 350rpx;
     width: auto;
     margin-top: 40rpx;
@@ -42,6 +43,10 @@
 }
 
 .venue-name{
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    right: 20rpx;
     color: white;
     font-weight: 600;
     font-size: 40rpx;
