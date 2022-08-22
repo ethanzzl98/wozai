@@ -13,9 +13,8 @@ Page({
      * Page initial data
      */
     data: {
-       picker
         array: ["Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
-    objectArray: [
+        objectArray: [
       {
         id: 0,
         name: "Bar"
@@ -208,10 +207,11 @@ Page({
 
     displayVenuesByCategory() {
         const page = this;
-        console.log(page.data);
+        
         this.setData({
             venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
         })
+        console.log(page.data);
     },
 
     /**
