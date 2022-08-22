@@ -54,7 +54,7 @@
         </view>
 
         <view class="first-place" wx:else></view>
-        <view class="third-place" wx:if="{{leaders.length === 3}}">
+        <view class="third-place" wx:if="{{leaders.length > 2}}">
             <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
             <view class="visits">
                 <view class="number">{{leaders[2].number_of_visits}}</view>
