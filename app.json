@@ -5,8 +5,6 @@
     "pages/users/profile",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/fake/venues/index",
-    "pages/fake/loading/index",
     "pages/landing/index"
   ],
   "window": {
