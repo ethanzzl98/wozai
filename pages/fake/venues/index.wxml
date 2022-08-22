@@ -1,7 +1,0 @@
-<!--pages/venues/index.wxml-->
-<text>pages/venues/index.wxml</text>
-<view wx:for="{{venues}}">
-    <view>Name: {{item.name}}</view>
-    <view>Address: {{item.address}}</view>
-    <br/>
-</view>
