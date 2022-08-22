@@ -94,5 +94,12 @@ Page({
         })
         console.log(this.data)
         this.getData()
-    }
+    },
+    goToShow(e) {
+        const id = e.currentTarget.dataset.index;
+        app.globalData.venue_id = id;
+        wx.navigateTo({
+          url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
+        })
+    },
 })

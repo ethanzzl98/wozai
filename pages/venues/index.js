@@ -13,6 +13,7 @@ Page({
      * Page initial data
      */
     data: {
+       picker
         array: ["Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
     objectArray: [
       {
@@ -63,6 +64,7 @@ Page({
         name: "Sports"
       }
     ],
+        selectedCategory: 'All'
     //     markers: [{
     //         latitude: 31.233442,
     //         longitude: 121.437512,
@@ -159,6 +161,8 @@ Page({
               venues: venues,
               markers: markers
             });
+            console.log(venues)
+            page.displayVenuesByCategory();
             // console.log(page.data)
           }
         })
@@ -194,22 +198,20 @@ Page({
           url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
         })
     },
-    onHide() {
-
+    
+    chooseCategory(e) {
+        this.setData({
+            selectedCategory: e.currentTarget.value
+        });
+        this.displayVenuesByCategory();
     },
 
-    /**
-     * Lifecycle function--Called when page unload
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * Page event handler function--Called when user drop down
-     */
-    onPullDownRefresh() {
-
+    displayVenuesByCategory() {
+        const page = this;
+        console.log(page.data);
+        this.setData({
+            venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
+        })
     },
 
     /**
