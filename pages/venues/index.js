@@ -100,7 +100,6 @@ Page({
             });
             console.log(venues)
             page.displayVenuesByCategory();
-            // console.log(page.data)
           }
         })
       },
@@ -131,8 +130,9 @@ Page({
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
+        console.log("url:",`/pages/venues/show?id=${id}`)
         wx.navigateTo({
-          url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
+          url: `/pages/venues/show?id=${id}`,
         })
     },
     
