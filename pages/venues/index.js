@@ -12,7 +12,7 @@ Page({
     /**
      * Page initial data
      */
-    data: {
+    data:{
         array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
         objectArray: [
       {
@@ -165,6 +165,5 @@ Page({
      */
     onShareAppMessage() {
 
-    },
-
+    }
 })
