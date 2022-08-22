@@ -12,71 +12,59 @@ Page({
     /**
      * Page initial data
      */
-    data: {
+    data:{
+        array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
+        objectArray: [
+      {
+        id: 0,
+        name: "Bar"
+      },
+      {
+        id: 1,
+        name: "Beauty"
+      },
+      {
+        id: 2,
+        name: "Cafe"
+      },
+      {
+        id: 3,
+        name: "Education"
+      },
+      {
+        id: 4,
+        name: "Gym"
+      },
+      {
+        id: 5,
+        name: "Hookah"
+      },
+      {
+        id: 6,
+        name: "Museum"
+      },
+      {
+        id: 7,
+        name: "Park"
+      }
+      ,
+      {
+        id: 8,
+        name: "Restaurant"
+      }
+      ,
+      {
+        id: 9,
+        name: "Shopping"
+      }
+      ,
+      {
+        id: 10,
+        name: "Sports"
+      }
+    ],
         selectedCategory: 'All'
-    //     markers: [{
-    //         latitude: 31.233442,
-    //         longitude: 121.437512,
-    //         name: 'Le Wagon',
-    //     },{
-    //         latitude: 31.234511,
-    //         longitude: 121.45017,
-    //         name: 'The Shed',
-    //     },{
-    //         latitude: 31.23508,
-    //         longitude: 121.44653,
-    //         name: 'The Grand Yard',
-    //     },
-    //     {
-    //         latitude: 31.235167,
-    //         longitude: 121.450486,
-    //         name: 'Gin & Juice',
-    //     },
-    //     {
-    //         latitude: 31.21586,
-    //         longitude: 121.45579,
-    //         name: 'Liquid Laundry',
-    //     },
-    //     {
-    //         latitude: 31.216576,
-    //         longitude: 121.456041,
-    //         name: 'Beef & Liberty',
-    //     },
-    //     {
-    //         latitude: 31.229142,
-    //         longitude: 121.45579,
-    //         name: 'Fat Cow',
-    //     },
-    //     {
-    //         latitude: 31.20451,
-    //         longitude: 121.4306,
-    //         name: 'Pie Society',
-    //     },
-    //     {
-    //         latitude: 31.229115,
-    //         longitude: 121.45435,
-    //         name: 'Brothers Kebab',
-    //     },
-    //     {
-    //         latitude: 31.21085,
-    //         longitude: 121.44313,
-    //         name: 'Boxing Cat Brewery',
-    //     },
-    //     {
-    //         latitude: 31.215026,
-    //         longitude: 121.44168,
-    //         name: 'New York Pizza',
-    //     },
-    //     {
-    //         latitude: 31.239912,
-    //         longitude: 121.466442,
-    //         name: 'The Beer Lady',
-    //     },
-    // ]   
     },
-    /**
-     * Lifecycle function--Called when page load
-     */
     onLoad(options) {
       setTimeout(function () {
         wx.hideLoading()
@@ -148,19 +136,21 @@ Page({
         })
     },
     
-    chooseCategory(e) {
+    bindPickerChange(e) {
         this.setData({
-            selectedCategory: e.currentTarget.value
+            selectedCategory: this.data.array[e.detail.value]
         });
+        console.log(e.detail)
         this.displayVenuesByCategory();
     },
 
     displayVenuesByCategory() {
         const page = this;
-        console.log(page.data);
+        
         this.setData({
             venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
         })
+        console.log(page.data);
     },
 
     /**
