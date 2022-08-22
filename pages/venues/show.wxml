@@ -1,56 +1,83 @@
 <!--pages/venues/show.wxml-->
-<view class="main">
-    <view class="card-venue">
-        <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
-            <view class="venue-title">{{venue.name}}</view>
+<view class="show-card">
+    <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
+        <view class="share-div">
+            <image class="share-button" src="/images/share_button.png">
+            </image>
         </view>
-        <view style="display: flex; flex-wrap: wrap;">
-            <block wx:for="{{venue.categories}}">
-                <view class="tag">{{item}}</view>
-            </block>
-        </view>
-        <view class="card-venue-info-top">
+        <view class="venue-title">{{venue.name}}</view>
+    </view>
+
+    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">Check-in!</view>
+
+    <view style="display: flex; flex-wrap: wrap;">
+         <block wx:for="{{venue.categories}}">
+            <view class="tag">{{item}}</view>
+        </block>
+    </view>
+
+    <view class="info-div">
+        <view class="venue-info-card">
             <view class="info-header">ADDRESS</view>
             <view class="info-content">{{venue.address}}</view>
             <view class="info-header">PHONE</view>
-            <view class="info-content">{{venue.phone === 'null'? '-' : venue.phone}}</view>
-        </view>
-        <view class="card-venue-info-bottom">
-            <view>
-                <view class="info-header">OPENING HOURS</view>
-                <view class="time">{{venue.open_time}} - {{venue.close_time}}</view>
+            <view class="info-content">{{venue.phone === 'null'? '-' : venue.phone}}</view>            
+            <view wx:if="{{venue.discount !== 'null'}}">
+                <view class="info-header">NOTES</view>
+                <view class="info-content">{{venue.discount}}</view>
             </view>
-        </view>
-        <view class="leaderboard-title">Leaderboard</view>
-        <view class="leaderboard">
-            <view class="be-first" wx:if="{{leaders.length === 0}}">Be the first to check-in!</view>
-            <view class="second-place" wx:if="{{leaders.length > 1}}">
-                <image class="avatar" src="{{leaders[1].avatar_url || '/images/avatar.png'}}"></image>
-                <view class="visits">
-                    <view class="number">{{leaders[1].number_of_visits}}</view>
-                    <view class="p">{{leaders[1].nickname}}</view>
-                </view>
-            </view>
-            <view class="second-place" wx:else></view>
-            <view class="first-place" wx:if="{{leaders.length > 0}}">
-                <image class="avatar" src="{{leaders[0].avatar_url || '/images/avatar.png'}}"></image>
-                <image class="crown" src="/images/crown.png"></image>
-                <view class="visits">
-                    <view class="number">{{leaders[0].number_of_visits}}</view>
-                    <view class="p">{{leaders[0].nickname}}</view>
-                </view>
-            </view>
-            <view class="first-place" wx:else>
-            </view>
-            <view class="third-place" wx:if="{{leaders.length === 3}}">
-                <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
-                <view class="visits">
-                    <view class="number">{{leaders[2].number_of_visits}}</view>
-                    <view class="p">{{leaders[2].nickname}}</view>
-                </view>
-            </view>
-            <view class="third-place" wx:else></view>
+            <view class="info-header">OPENING HOURS</view>
+            <view class="time">{{venue.open_time}} - {{venue.close_time}}</view>
         </view>
     </view>
-    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">Check-in!</view>
+
+
+    <view class="leaderboard-title">Leaderboard</view>
+    <view class="leaderboard">
+        <view class="be-first" wx:if="{{leaders.length === 0}}">Be the first to check-in!</view>
+        <view class="second-place" wx:if="{{leaders.length > 1}}">
+             <image class="avatar" src="{{leaders[1].avatar_url || '/images/avatar.png'}}"></image>
+             <view class="visits">
+                <view class="number">{{leaders[1].number_of_visits}}</view>
+                <view class="p">{{leaders[1].nickname}}</view>
+            </view>
+        </view>
+
+        <view class="second-place" wx:else></view>
+        <view class="first-place" wx:if="{{leaders.length > 0}}">
+            <image class="avatar" src="{{leaders[0].avatar_url || '/images/avatar.png'}}"></image>
+            <image class="crown" src="/images/crown.png"></image>
+             <view class="visits">
+                <view class="number">{{leaders[0].number_of_visits}}</view>
+                <view class="p">{{leaders[0].nickname}}</view>
+            </view>
+        </view>
+
+        <view class="first-place" wx:else></view>
+        <view class="third-place" wx:if="{{leaders.length === 3}}">
+            <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
+            <view class="visits">
+                <view class="number">{{leaders[2].number_of_visits}}</view>
+                <view class="p">{{leaders[2].nickname}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <view class="my-checkins" style="color:white;">
+        <!-- my checkin:{{venue.my_checkin}} -->
+            <view class="my-info">
+                <view class="my-avatar" style="background-image: url({{user.avatar_url}});"></view>
+                <view class="user-nickname">{{user.nickname}}</view>
+            </view>
+            <view class="my-checkin-card">
+                <view wx:if="{{venue.my_checkin > 0}}">
+                <view class="my-checkin-text">You have checked in here: <span style="font-size: 60rpx;">{{venue.my_checkin}}</span> time<span wx:if="{{venue.my_checkin !== 1}}">s</span></view>
+            </view>
+            <view wx:else>
+                <view class="my-checkin-text">You haven't checked in here yet!</view>
+            </view>
+            </view>
+        </view>
+    </view>
 </view>

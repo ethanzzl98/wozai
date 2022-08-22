@@ -9,7 +9,7 @@ Page({
         leaders: [],
         active: true
     },
-
+    
     /**
      * Lifecycle function--Called when page load
      */
@@ -31,7 +31,8 @@ Page({
                 console.log('res from getting restsurant information', res.data)
                 page.setData({
                     venue: res.data,
-                    leaders: res.data.leaders
+                    leaders: res.data.leaders,
+                    user: app.globalData.user
                 })
             }
         });
@@ -91,6 +92,8 @@ Page({
         wx.showModal({
             title: "Check-in?",
             content: 'Would you like to check in here?',
+            cancelText: 'No',
+            confirmText: 'Yes',
             success (res) {
               if (res.confirm) {
                 wx.request({
@@ -109,6 +112,7 @@ Page({
                           duration: 2000,
                           icon: 'success'
                         })
+                        page.onReady();
                     }
                 })
 
