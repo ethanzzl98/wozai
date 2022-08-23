@@ -35,5 +35,6 @@ App({
     user: null,
     latitude: 31.233442,
     longitude: 121.437512
+
   }
 })

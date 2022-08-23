@@ -7,20 +7,27 @@ Page({
      */
     data: {
         leaders: [],
-        active: true
+        active: true,
+        isLogin: false
     },
     
     /**
      * Lifecycle function--Called when page load
      */
-    onLoad: (options) => {
-
+    onLoad(options) {
+        const page = this;
+        app.globalData.venue_id = options.id;
+        if (app.globalData.header) {
+            page.getData()
+        } else {
+            wx.event.on('loginFinish', page, page.getData)
+        }
     },
 
     /**
      * Lifecycle function--Called when page is initially rendered
      */
-    onReady() {
+    getData() {
         const page = this;
         const id = app.globalData.venue_id;
         wx.request({
@@ -32,7 +39,8 @@ Page({
                 page.setData({
                     venue: res.data,
                     leaders: res.data.leaders,
-                    user: app.globalData.user
+                    user: app.globalData.user,
+                    isLogin: true
                 })
             }
         });
@@ -112,7 +120,7 @@ Page({
                           duration: 2000,
                           icon: 'success'
                         })
-                        page.onReady();
+                        page.getData();
                     }
                 })
 
@@ -153,6 +161,12 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage() {
-
-    }
+        const id = this.data.venue.id;
+        console.log(id)
+        return {
+          title: this.data.venue.name,
+          imgaUrl: this.data.venue.photo_url,
+          path: `pages/venues/show?id=${id}`
+        }
+      },
 })

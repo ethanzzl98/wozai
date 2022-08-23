@@ -2,13 +2,13 @@
 <view class="show-card">
     <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
         <view class="share-div">
-            <image class="share-button" src="/images/share_button.png">
-            </image>
+            <button open-type="share" class="share-button" ><image class="share-icon" src="/images/share_button.png">
+            </image></button>
         </view>
         <view class="venue-title">{{venue.name}}</view>
     </view>
 
-    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">Check-in!</view>
+    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">{{active ? 'Check-in!' : 'Checked-in'}}</view>
 
     <view style="display: flex; flex-wrap: wrap;">
          <block wx:for="{{venue.categories}}">
@@ -54,7 +54,7 @@
         </view>
 
         <view class="first-place" wx:else></view>
-        <view class="third-place" wx:if="{{leaders.length === 3}}">
+        <view class="third-place" wx:if="{{leaders.length > 2}}">
             <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
             <view class="visits">
                 <view class="number">{{leaders[2].number_of_visits}}</view>
@@ -66,7 +66,7 @@
     <view>
         <view class="my-checkins" style="color:white;">
         <!-- my checkin:{{venue.my_checkin}} -->
-            <view class="my-info">
+            <view class="my-info" wx:if="{{isLogin}}">
                 <view class="my-avatar" style="background-image: url({{user.avatar_url}});"></view>
                 <view class="user-nickname">{{user.nickname}}</view>
             </view>

@@ -14,76 +14,10 @@ Page({
      */
     data:{
         array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
-        objectArray: [
-      {
-        id: 0,
-        name: "Bar"
-      },
-      {
-        id: 1,
-        name: "Beauty"
-      },
-      {
-        id: 2,
-        name: "Cafe"
-      },
-      {
-        id: 3,
-        name: "Education"
-      },
-      {
-        id: 4,
-        name: "Gym"
-      },
-      {
-        id: 5,
-        name: "Hookah"
-      },
-      {
-        id: 6,
-        name: "Museum"
-      },
-      {
-        id: 7,
-        name: "Park"
-      }
-      ,
-      {
-        id: 8,
-        name: "Restaurant"
-      }
-      ,
-      {
-        id: 9,
-        name: "Shopping"
-      }
-      ,
-      {
-        id: 10,
-        name: "Sports"
-      }
-    ],
-        selectedCategory: 'All'
+        selectedCategory: 'All',
+        latitude: 31.233442,
+        longitude: 121.437512
     },
-    onLoad(options) {
-      setTimeout(function () {
-        wx.hideLoading()
-      }, 1500)
-
-      this.mapContext = wx.createMapContext('myMap');
-
-        var that = this
-        wx.getLocation({
-            type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-            success: function (res) {
-              console.log(res)
-                var latitude = res.latitude; 
-                var longitude = res.longitude; 
-            }
-        });
-    
-    },
-
     
     getData() {
         let page = this;
@@ -102,7 +36,6 @@ Page({
             });
             console.log(venues)
             page.displayVenuesByCategory();
-            // console.log(page.data)
           }
         })
       },
@@ -116,25 +49,16 @@ Page({
       },
 
     onReady() {
-            // Use wx.createMapContext to obtain the map context
-           this.mapCtx = wx.createMapContext('myMap')
-
-            // this.mapCtx.getCenterLocation({
-            //   success: function(res){
-            //     console.log({res})
-            //     // console.log(res.latitude)
-            //   }
-            // })
-
-            this.mapCtx.moveToLocation()
-        },
+        this.mapCtx = wx.createMapContext('myMap')
+        this.mapContext.moveToLocation();
+    },
     
-        
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
+        console.log("url:",`/pages/venues/show?id=${id}`)
         wx.navigateTo({
-          url: `/pages/venues/show?id=${e.currentTarget.dataset.id}`,
+          url: `/pages/venues/show?id=${id}`,
         })
     },
     
