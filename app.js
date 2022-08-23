@@ -30,8 +30,10 @@ App({
   },
   globalData: {
     header: null,
-    // baseUrl: 'https://wozai.wogengapp.cn/api/v1',
-    baseUrl: 'http://localhost:3000/api/v1',
-    user: null
+    baseUrl: 'https://wozai.wogengapp.cn/api/v1',
+    // baseUrl: 'http://localhost:3000/api/v1',
+    user: null,
+    latitude: 31.233442,
+    longitude: 121.437512
   }
 })

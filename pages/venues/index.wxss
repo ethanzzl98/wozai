@@ -8,18 +8,24 @@
     border-radius: 50rpx;
 }
 
+.category {
+    height: 40rpx;
+    width: 40rpx;
+    
+}
+
 .search {
     width: auto;
     background: #FFFFFF;
     border: 2rpx solid var(--theme-blue);
     box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
-    border-radius: 50rpx;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    /* border-radius: 50rpx; */
     padding: 10rpx 20rpx;
     color: rgb(155,164,180);
-    font-weight: 400;
+    font-weight: 400; 
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-venue {

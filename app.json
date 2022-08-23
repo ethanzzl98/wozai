@@ -1,13 +1,13 @@
 {
   "pages":[
+    "pages/landing/index",
     "pages/venues/index",
     "pages/venues/show",
     "pages/users/profile",
     "pages/index/index",
     "pages/logs/logs",
     "pages/fake/venues/index",
-    "pages/fake/loading/index",
-    "pages/landing/index"
+    "pages/fake/loading/index"    
   ],
   "window": {
     "backgroundTextStyle":"light",

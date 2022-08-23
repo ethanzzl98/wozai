@@ -96,7 +96,9 @@ Page({
             const markers = venues;
             page.setData({
               venues: venues,
-              markers: markers
+              markers: markers,
+              latitude: app.globalData.latitude,
+              longitude: app.globalData.longitude,
             });
             console.log(venues)
             page.displayVenuesByCategory();
@@ -117,12 +119,12 @@ Page({
             // Use wx.createMapContext to obtain the map context
            this.mapCtx = wx.createMapContext('myMap')
 
-            this.mapCtx.getCenterLocation({
-              success: function(res){
-                console.log({res})
-                // console.log(res.latitude)
-              }
-            })
+            // this.mapCtx.getCenterLocation({
+            //   success: function(res){
+            //     console.log({res})
+            //     // console.log(res.latitude)
+            //   }
+            // })
 
             this.mapCtx.moveToLocation()
         },
