@@ -37,14 +37,6 @@
     border-radius: 50rpx;
 }
 
-/* .venue-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20rpx;
-    padding-top: 260rpx;
-} */
-
 .venue-name{
     position: absolute;
     bottom: 20rpx;
@@ -57,6 +49,9 @@
 }
 
 .venue-distance {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
     color: white;
     background-color: var(--theme-blue);
     padding: 15rpx 30rpx;
