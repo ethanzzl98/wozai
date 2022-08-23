@@ -7,13 +7,13 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  
   "window": {
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#e5eaf8",
     "navigationBarTitleText": "Wo Zai",
     "navigationBarTextStyle":"black"
   },
-
 
   "tabBar": {
     "color": "9BA4B4",
