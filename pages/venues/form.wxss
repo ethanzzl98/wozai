@@ -1,0 +1,107 @@
+/* pages/venues/form.wxss */
+.banner {
+  top: 0; bottom: 100;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.close {
+  display: flex;
+  position: relative;
+}
+
+.page-container {
+  background-color: #f4f4f4;
+  background-size: cover; 
+  height: 100vh; 
+  overflow-y: scroll;
+}
+
+.section {
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+  margin: 56rpx 32rpx;
+  padding: 40rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  color: rgb(2, 2, 2);
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 4px;
+}
+
+.section input {
+  width: 100%;
+}
+
+.section-description {
+  height: 200rpx;
+}
+
+.section-picker {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding: 20rpx 20rpx;
+  font-size: 40rpx;
+  color: rgb(2, 2, 2);
+}
+
+.btn-primary {
+  border-radius: 50rpx;
+  bottom: 5px;
+  color: white;
+  padding: 10rpx 20rpx;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+  text-shadow: 2rpx 2rpx black;
+  box-shadow: 0 0 2rpx rgb(1,1,1);
+  background-color: #F27E0D;
+}
+
+.picker {
+  color: rgb(112, 108, 108);
+}
+
+.section image {
+  height: 100rpx;
+  width: 100rpx;
+  margin-top: 10rpx;
+}
+
+.close-btn {
+  height: 64rpx;
+  width: 64rpx;
+  margin-left: 600rpx;
+  margin-top: 25rpx;
+} 
+
+.section-icon {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/44/44289.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  background-position: center;
+  padding: 20rpx 20rpx;
+}
+
+  
+.btn-delete {
+  border-radius: 50rpx;
+  bottom: 5px;
+  color: white;
+  padding: 10rpx 20rpx;
+  background-color: #7E0DF2;
+  color: white;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+  text-shadow: 2rpx 2rpx black;
+  box-shadow: 0 0 2rpx rgb(1,1,1);
+}
+
+.button-flex {
+  display: flex; 
+}

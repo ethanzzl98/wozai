@@ -3,11 +3,12 @@
     "pages/landing/index",
     "pages/venues/index",
     "pages/venues/show",
+    "pages/venues/form",
     "pages/users/profile",
     "pages/index/index",
     "pages/logs/logs",
     "pages/fake/venues/index",
-    "pages/fake/loading/index"    
+    "pages/fake/loading/index"
   ],
   "window": {
     "backgroundTextStyle":"light",
@@ -25,6 +26,11 @@
         "text": "Home",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_active.png"
+    }, {
+      "pagePath": "pages/venues/form",
+      "text": "Add Venue",
+      "iconPath": "images/profile.png",
+      "selectedIconPath": "images/profile_active.png"
     }, {
         "pagePath": "pages/users/profile",
         "text": "Profile",

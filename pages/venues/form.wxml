@@ -1,0 +1,56 @@
+<!--pages/venues/form.wxml-->
+<view class="page-container">
+  <view class="main">
+
+    <form bindsubmit="save">
+      <view class="header">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
+
+    <view class="section" >
+      <input data-name="subject" bindinput="updateData" maxlength="15" value="{{lesson.subject}}" class="weui-input" auto-focus placeholder="Subject"/>
+    </view>
+
+    <view class="section">
+      <input data-name="title" maxlength="15" value="{{lesson.title}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Title"/>
+    </view>
+
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="2022-08-01" end="2023-09-01" bindchange="bindStartDateChange">
+        <view class="picker">
+        Start Date: <text class="section-picker">{{lesson.start_date}}</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+        <view class="picker"> Start Time: 
+          <text class="section-picker">{{lesson.start_time}}</text>
+        </view>
+      </picker>
+
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+        <view class="picker">
+          End Time: <text class="section-picker">{{lesson.end_time}}</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="section section-description">
+      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Lesson Description"/>
+    </view>
+
+    <view class="section" bindtap="chooseIcon" >
+      <input wx:if="{{!lesson.icon_url}}" class="weui-input"  auto-focus placeholder="Choose icon"/>
+      <image wx:else src="{{lesson.icon_url}}"/>
+      <view wx:if="{{!lesson.icon_url}}" class="section-icon"></view>
+    </view>
+
+    <view class="button-flex">
+      <button class="btn-primary" bindtap="createLesson">Save</button>
+      <button class="btn-delete" bindtap="goBack">Cancel</button>
+    </view>
+
+    </form>
+  </view>
+  <choose-icons bind:closeIconPicker="closeIconPicker" bind:changeIcon="changeIcon" wx:if="{{showIconPicker}}" />
+</view>
