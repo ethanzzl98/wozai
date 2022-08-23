@@ -1,5 +1,5 @@
 <!--pages/venues/form.wxml-->
-<view class="page-container">
+<view class="main">
 
     <form bindsubmit="save">
       <view class="form-title">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
@@ -13,7 +13,7 @@
     </view>
 
     <view class="section" >
-      <input data-name="phone_number" bindinput="updateData" maxlength="15" value="{{venue.subject}}" class="weui-input" auto-focus placeholder="Phone Number"/>
+      <input data-name="phone_number" bindinput="updateData" maxlength="15" value="{{venue.phone}}" class="weui-input" auto-focus placeholder="Phone Number"/>
     </view>
 
     <!-- <view class="page-section">
@@ -41,7 +41,7 @@
     <view>Hours of Operation</view>
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
         <view class="picker"> Open: 
-          <text class="section-picker">{{venue.start_time}}</text>
+          <text class="section-picker">{{venue.open_time}}</text>
         </view>
       </picker>
 
@@ -56,10 +56,12 @@
       <textarea data-name="description" value="{{venue.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
     </view>
 
-    <view class="section" bindtap="choosePhoto" >
-      <input wx:if="{{!lvenue.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
-      <image wx:else src="{{venue.icon_url}}"/>
-      <view wx:if="{{!venue.icon_url}}" class="section-icon"></view>
+    <image wx:if="{{img}}" src="{{img}}" mode="aspectFit"></image>
+
+    <view class="section" bindtap="chooseImg" >
+      <input wx:if="{{!lvenue.photo_url}}" class="weui-input" disabled="true" placeholder="Add a Photo"/>
+      <image wx:else src="{{venue.photo_url}}"/>
+      <view wx:if="{{!venue.photo_url}}" class="section-photo"></view>
     </view>
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
