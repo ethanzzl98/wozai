@@ -39,6 +39,12 @@
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
     </form>
+
+    <view class="button-flex">
+      <button class="" bindtap="createLesson">Save</button>
+      <button class="" bindtap="goBack">Cancel</button>
+    </view>
+
   </view>
   <choose-icons bind:closeIconPicker="closeIconPicker" bind:changeIcon="changeIcon" wx:if="{{showIconPicker}}" />
 </view>
