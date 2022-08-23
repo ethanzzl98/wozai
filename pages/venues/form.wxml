@@ -1,44 +1,76 @@
 <!--pages/venues/form.wxml-->
 <view class="page-container">
-  <view class="main">
 
     <form bindsubmit="save">
-      <view class="header">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
+      <view class="form-title">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
 
     <view class="section" >
-      <input data-name="subject" bindinput="updateData" maxlength="15" value="{{lesson.subject}}" class="weui-input" auto-focus placeholder="Venue Name"/>
+      <input data-name="name" bindinput="updateData" maxlength="15" value="{{venue.name}}" class="weui-input" auto-focus placeholder="Venue Name"/>
     </view>
 
     <view class="section">
-      <input data-name="title" maxlength="15" value="{{lesson.title}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Address"/>
+      <input data-name="name" maxlength="15" value="{{venue.name}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Address"/>
     </view>
 
+    <view class="section" >
+      <input data-name="phone_number" bindinput="updateData" maxlength="15" value="{{venue.subject}}" class="weui-input" auto-focus placeholder="Phone Number"/>
+    </view>
+
+    <!-- <view class="page-section">
+      <view class="page-section-name">Category</view>
+      <view class="weui-cells weui-cells_after-name">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view> -->
+
+
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="search">
+                      Category {{array[index]}}
+                      <image src="../../images/Category.png" class="category"></image>
+              </view></picker>
+    
     <view class="section">
+    <view>Hours of Operation</view>
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
-        <view class="picker"> Start Time: 
-          <text class="section-picker">{{lesson.start_time}}</text>
+        <view class="picker"> Open: 
+          <text class="section-picker">{{venue.start_time}}</text>
         </view>
       </picker>
 
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
         <view class="picker">
-          End Time: <text class="section-picker">{{lesson.end_time}}</text>
+          Close: <text class="section-picker">{{venue.close_time}}</text>
         </view>
       </picker>
     </view>
 
     <view class="section section-description">
-      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
+      <textarea data-name="description" value="{{venue.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
     </view>
 
-    <view class="section" bindtap="chooseIcon" >
-      <input wx:if="{{!lesson.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
-      <image wx:else src="{{lesson.icon_url}}"/>
-      <view wx:if="{{!lesson.icon_url}}" class="section-icon"></view>
+    <view class="section" bindtap="choosePhoto" >
+      <input wx:if="{{!lvenue.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
+      <image wx:else src="{{venue.icon_url}}"/>
+      <view wx:if="{{!venue.icon_url}}" class="section-icon"></view>
     </view>
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
     </form>
+
+    <view class="button-flex">
+      <button class="" bindtap="createLesson">Save</button>
+      <button class="" bindtap="goBack">Cancel</button>
+    </view>
+
+  <view>
+  <choose-Photo bind:closePhotoPicker="closePhotoPicker" bind:changePhoto="changePhoto" wx:if="{{showPhotoPicker}}" />
   </view>
-  <choose-icons bind:closeIconPicker="closeIconPicker" bind:changeIcon="changeIcon" wx:if="{{showIconPicker}}" />
 </view>
