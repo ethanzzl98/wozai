@@ -94,7 +94,7 @@ Page({
         user_id: app.globalData.user.id,
         start_date: page.getISODate(),
         start_time: "10:00",
-        end_time: "11:00",
+        end_time: "22:00",
       },
       id: null,
     };

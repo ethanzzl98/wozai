@@ -22,14 +22,14 @@
 .section {
   box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
   margin: 56rpx 32rpx;
-  padding: 40rpx 32rpx;
+  padding: 20rpx 32rpx;
   box-sizing: border-box;
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: rgb(2, 2, 2);
   display: flex;
   justify-content: space-between;
   background: white;
-  border-radius: 4px;
+  border-radius: 25px;
 }
 
 .section input {
