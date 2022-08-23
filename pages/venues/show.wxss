@@ -86,13 +86,13 @@ page {
 }
 
 .info-header {
-    font-size: 28rpx;
+    font-size: 26rpx;
     font-weight: 400;
     color: rgb(155,164,180);
 }
 
 .info-content {
-    font-size: 34rpx;
+    font-size: 30rpx;
     font-weight: 400;
     color: black;
     border-bottom: 2rpx solid rgba(155,164,180,.1);
@@ -100,7 +100,7 @@ page {
 }
 
 .time {
-    font-size: 34rpx;
+    font-size: 30rpx;
     font-weight: 400;
     color: black;
 }
