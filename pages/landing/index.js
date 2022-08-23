@@ -12,8 +12,6 @@ Page({
     },
 
     enterIndex() {
-       
-
       wx.switchTab({
         url: '/pages/venues/index',
       })
