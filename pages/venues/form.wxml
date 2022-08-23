@@ -36,11 +36,7 @@
       <image wx:else src="{{lesson.icon_url}}"/>
       <view wx:if="{{!lesson.icon_url}}" class="section-icon"></view>
     </view>
-
-    <view class="button-flex">
-      <button class="btn-primary" bindtap="createLesson">Save</button>
-      <button class="btn-delete" bindtap="goBack">Cancel</button>
-    </view>
+    <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
     </form>
   </view>
