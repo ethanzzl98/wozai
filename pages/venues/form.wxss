@@ -7,6 +7,11 @@
   opacity: 0.5;
 }
 
+.category {
+  height: 40rpx;
+  width: 40rpx; 
+}
+
 .close {
   display: flex;
   position: relative;
@@ -60,6 +65,19 @@
   text-shadow: 2rpx 2rpx black;
   box-shadow: 0 0 2rpx rgb(1,1,1);
   background-color: #F27E0D;
+}
+
+.search {
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+  margin: 56rpx 32rpx;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: rgb(2, 2, 2);
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 25px;
 }
 
 .picker {

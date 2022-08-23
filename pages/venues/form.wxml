@@ -18,6 +18,12 @@
     </view>
 
     
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="search">
+                      Category {{array[index]}}
+                      <image src="../../images/Category.png" class="category"></image>
+              </view></picker>
+    
     <view class="section">
     <view>Hours of Operation</view>
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
