@@ -57,15 +57,15 @@
       <textarea data-name="specials"></textarea>
     </view>
 
-    <image wx:if="{{img}}" src="{{img}}" mode="aspectFit"></image>
-
-    <view class="section" bindtap="chooseImg" >
-      <input wx:if="{{!lvenue.photo_url}}" class="weui-input" disabled="true" placeholder="Add a Photo"/>
-      <image wx:else src="{{venue.photo_url}}"/>
-      <view wx:if="{{!venue.photo_url}}" class="section-photo"></view>
+    <view class="input-title">Add a photo:</view>
+    <image wx:if="{{img}}" mode="aspectFit" src="{{img}}"></image>
+    <view class="section" bindtap="chooseImg">
+        <view wx:if="{{!venue.photo_url}}" class="section-photo"></view>
     </view>
+
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
-        <button class="button-flex" bindtap="createLesson">Create venue</button>
+    <button class="button-flex" bindtap="createLesson">Create venue</button>
+
     </form>
 </view>
