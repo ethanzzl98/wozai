@@ -68,8 +68,8 @@
     </form>
 
     <view class="button-flex">
-      <button class="" bindtap="createLesson">Save</button>
-      <button class="" bindtap="goBack">Cancel</button>
+      <button class="btn-form" bindtap="createLesson">Save</button>
+      <button class="btn-form" bindtap="goBack">Cancel</button>
     </view>
 
   <view>

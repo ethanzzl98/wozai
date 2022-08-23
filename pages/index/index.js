@@ -18,50 +18,8 @@ Page({
     })
   },
   onLoad() {
-    // if (wx.getUserProfile) {
-    //   this.setData({
-    //     canIUseGetUserProfile: true
-    //   })
-    // }
-    this.mapContext = swan.createMapContext('myMap');
-    },
-    includePointsOne() {
-        this.mapContext.includePoints({
-            padding: [10],
-            points: [{
-                latitude: 31.23508,
-                longitude: 121.44653
-            }, {
-                latitude: 31.235167,
-                longitude: 121.450486
-            }],
-            success: res => {
-                console.log('includePoints success');
-            },
-            fail: err => {
-                console.log('includePoints fail', err);
-            }
-        });
-    },
     
-    includePointsTwo() {
-        this.mapContext.includePoints({
-            padding: [10],
-            points: [{
-                latitude: 31.233442,
-                longitude: 121.437512
-            }, {
-                latitude: 31.234511,
-                longitude: 121.45017
-            }],
-            success: res => {
-                console.log('includePoints success');
-            },
-            fail: err => {
-                console.log('includePoints fail', err);
-            }
-        });
-    },
+  },
   
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

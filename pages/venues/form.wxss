@@ -132,6 +132,22 @@
   text-shadow: 2rpx 2rpx black;
   box-shadow: 0 0 2rpx rgb(1,1,1);
 }
+.btn-form {
+  display: flex;
+    justify-content: center;
+    margin-top: 40rpx !important;
+    background-color: rgb(20,39,78);
+    color: white;
+    padding: 20rpx 100rpx;
+    font-size: 45rpx;
+    font-weight: bold;
+    border-radius: 50rpx;
+    width: 330rpx;
+    margin: 0 auto;
+    margin-bottom: 40rpx;
+    white-space: nowrap;
+}
+
 
 .button-flex {
   display: flex; 
