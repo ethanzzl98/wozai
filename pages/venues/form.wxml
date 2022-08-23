@@ -6,19 +6,11 @@
       <view class="header">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
 
     <view class="section" >
-      <input data-name="subject" bindinput="updateData" maxlength="15" value="{{lesson.subject}}" class="weui-input" auto-focus placeholder="Subject"/>
+      <input data-name="subject" bindinput="updateData" maxlength="15" value="{{lesson.subject}}" class="weui-input" auto-focus placeholder="Venue Name"/>
     </view>
 
     <view class="section">
-      <input data-name="title" maxlength="15" value="{{lesson.title}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Title"/>
-    </view>
-
-    <view class="section">
-      <picker mode="date" value="{{date}}" start="2022-08-01" end="2023-09-01" bindchange="bindStartDateChange">
-        <view class="picker">
-        Start Date: <text class="section-picker">{{lesson.start_date}}</text>
-        </view>
-      </picker>
+      <input data-name="title" maxlength="15" value="{{lesson.title}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Address"/>
     </view>
 
     <view class="section">
@@ -36,11 +28,11 @@
     </view>
 
     <view class="section section-description">
-      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Lesson Description"/>
+      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials">
     </view>
 
     <view class="section" bindtap="chooseIcon" >
-      <input wx:if="{{!lesson.icon_url}}" class="weui-input"  auto-focus placeholder="Choose icon"/>
+      <input wx:if="{{!lesson.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
       <image wx:else src="{{lesson.icon_url}}"/>
       <view wx:if="{{!lesson.icon_url}}" class="section-icon"></view>
     </view>
