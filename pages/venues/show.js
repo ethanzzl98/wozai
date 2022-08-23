@@ -98,10 +98,12 @@ Page({
     actualCheckIn(id){
         let page = this
         wx.showModal({
-            title: "Check-in?",
+            title: "Check in?",
             content: 'Would you like to check in here?',
             cancelText: 'No',
+            cancelColor: 'red',
             confirmText: 'Yes',
+            confirmColor: 'green',
             success (res) {
               if (res.confirm) {
                 wx.request({
@@ -116,7 +118,7 @@ Page({
                         })
                         
                         wx.showToast({
-                          title: 'Checked-in',
+                          title: 'Checked in!',
                           duration: 2000,
                           icon: 'success'
                         })
