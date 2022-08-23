@@ -30,7 +30,9 @@ Page({
             const markers = venues;
             page.setData({
               venues: venues,
-              markers: markers
+              markers: markers,
+              latitude: app.globalData.latitude,
+              longitude: app.globalData.longitude,
             });
             console.log(venues)
             page.displayVenuesByCategory();
@@ -47,10 +49,8 @@ Page({
       },
 
     onReady() {
-        // Use wx.createMapContext to obtain the map context
-        this.mapContext = wx.createMapContext('myMap');
+        this.mapCtx = wx.createMapContext('myMap')
         this.mapContext.moveToLocation();
-
     },
     
     goToShow(e) {
