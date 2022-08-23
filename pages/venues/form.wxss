@@ -1,57 +1,72 @@
 /* pages/venues/form.wxss */
-.banner {
-  top: 0; bottom: 100;
-  background-size: cover;
-  height: 100vh;
-  background-position: center;
-  opacity: 0.5;
-}
-
 .form-title {
-  /* padding: 10rpx 20rpx; */
-    width: 90%;
-    margin: auto;
-    /* display: flex; */
-    /* justify-content: center; */
-    color: rgb(20,39,78);
+    width: 100%;
+    display: flex;
+    color: var(--theme-blue);
     font-size: 44rpx;
     font-weight: 600;
-    margin-top: 40rpx;
-    /* border-bottom: 2rpx solid var(--theme-blue) */
+    margin-bottom: 30rpx;
 }
 
-.category {
-  height: 40rpx;
-  width: 40rpx; 
+.logo {
+    width: 250rpx;
+    height: 250rpx;
 }
 
-.close {
-  display: flex;
-  position: relative;
-}
-
-.page-container {
-  background-color: #f4f4f4;
-  background-size: cover; 
-  height: 100vh; 
-  overflow-y: scroll;
+.title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 35rpx;
+    font-size: 60rpx;
 }
 
 .section {
-  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-  margin: 56rpx 32rpx;
-  padding: 20rpx 32rpx;
-  box-sizing: border-box;
-  font-size: 32rpx;
-  color: rgb(2, 2, 2);
-  display: flex;
-  justify-content: space-between;
-  background: white;
-  border-radius: 25px;
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    padding: 20rpx 30rpx;
+    font-size: 32rpx;
+    background: white;
+    border-radius: 50rpx;
+    margin-bottom: 30rpx;
+    border: 2rpx solid var(--theme-blue);
 }
 
-.section input {
-  width: 100%;
+.input-title {
+    font-size: 36rpx;
+    color: var(--theme-blue);
+    margin-left: 20rpx;
+    margin-bottom: 5rpx;
+    font-weight: 500;
+}
+
+checkbox {
+    margin: 10rpx 0rpx 10rpx 10rpx;
+}
+
+label {
+    font-size: 34rpx;
+    color: var(--theme-blue);
+}
+
+.hours {
+    font-size: 36rpx;
+    color: var(--theme-blue);
+    margin-left: 20rpx;
+    margin-bottom: 5rpx;
+    font-weight: 500;
+    margin-top: 20rpx;
+}
+
+.hours-section {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    padding: 20rpx 0rpx;
+    font-size: 32rpx;
+    background: white;
+    border-radius: 50rpx;
+    margin-bottom: 30rpx;
+    border: 2rpx solid var(--theme-blue);
 }
 
 .section-description {
@@ -59,13 +74,8 @@
 }
 
 .section-picker {
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  padding: 20rpx 20rpx;
-  font-size: 40rpx;
-  color: rgb(2, 2, 2);
+  font-size: 36rpx;
+  color: var(--theme-blue);
 }
 
 .btn-primary {
@@ -119,20 +129,12 @@
   padding: 20rpx 20rpx;
 }
 
-  
-.btn-delete {
-  border-radius: 50rpx;
-  bottom: 5px;
-  color: white;
-  padding: 10rpx 20rpx;
-  background-color: #7E0DF2;
-  color: white;
-  margin-top: 100rpx;
-  margin-bottom: 50rpx;
-  text-shadow: 2rpx 2rpx black;
-  box-shadow: 0 0 2rpx rgb(1,1,1);
-}
-
 .button-flex {
-  display: flex; 
+    background-color: rgb(20,39,78);
+    color: white;
+    font-size: 45rpx;
+    font-weight: bold;
+    border-radius: 50rpx;
+    width: 450rpx;
+    margin-bottom: 30rpx;
 }
