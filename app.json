@@ -29,8 +29,8 @@
     }, {
       "pagePath": "pages/venues/form",
       "text": "Add Venue",
-      "iconPath": "images/profile.png",
-      "selectedIconPath": "images/profile_active.png"
+      "iconPath": "images/selected-plus-button.png",
+      "selectedIconPath": "images/add-plus-button.png"
     }, {
         "pagePath": "pages/users/profile",
         "text": "Profile",

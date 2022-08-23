@@ -28,7 +28,7 @@
     </view>
 
     <view class="section section-description">
-      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials">
+      <textarea data-name="description" value="{{lesson.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
     </view>
 
     <view class="section" bindtap="chooseIcon" >
