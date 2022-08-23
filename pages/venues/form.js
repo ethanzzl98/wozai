@@ -1,5 +1,7 @@
 // pages/venues/form.js
 const app = getApp();
+
+
 Page({
   
   data: {
@@ -12,6 +14,21 @@ Page({
       this.setData({'venue.start_time': e.detail.value})
   },
 
+  chooseImg: function() {
+    var that = this;
+    wx.chooseImage({
+             Count: 5, // Default 9 
+             Siztype: ['Original', 'compressed'], // can be specified as the original image or a compressed map, the default is 
+             SourceType: ['Album', 'Camera'], // You can specify the source is the album or the camera, the default is 
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          img: res.tempFilePaths[0],
+        })
+      }
+    })
+  },
+
   bindEndTimeChange(e) {
     this.setData({'venue.end_time': e.detail.value})
   },
@@ -19,7 +36,7 @@ Page({
   createLesson: function () {
     const page = this;
     if (page.data.isEdit) {
-      this.makeUpdateLessonRequest()
+      this.makeUpdateVenueRequest()
     } else {
       this.makeCreateVenueRequest()
     }

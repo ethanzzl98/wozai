@@ -19,7 +19,7 @@
 
     <view class="input-title">Phone:</view>
     <view class="section">
-      <input data-name="phone_number"/>
+      <input data-name="phone"/>
     </view>
 
     <view class="input-title">Category:</view>
@@ -40,11 +40,11 @@
     <view class="hours">Opening hours:</view>
     <view class="hours-section">
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
-        <view class="picker">Open:
-            <text class="section-picker">{{venue.start_time}}</text>
+        <view class="picker"> Open: 
+          <text class="section-picker">{{venue.open_time}}</text>
         </view>
       </picker>
-
+      
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
         <view class="picker"> Close:
             <text class="section-picker">{{venue.close_time}}</text>
@@ -57,10 +57,12 @@
       <textarea data-name="specials"></textarea>
     </view>
 
-    <view class="section" bindtap="choosePhoto" >
-      <input wx:if="{{!lvenue.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
-      <image wx:else src="{{venue.icon_url}}"/>
-      <view wx:if="{{!venue.icon_url}}" class="section-icon"></view>
+    <image wx:if="{{img}}" src="{{img}}" mode="aspectFit"></image>
+
+    <view class="section" bindtap="chooseImg" >
+      <input wx:if="{{!lvenue.photo_url}}" class="weui-input" disabled="true" placeholder="Add a Photo"/>
+      <image wx:else src="{{venue.photo_url}}"/>
+      <view wx:if="{{!venue.photo_url}}" class="section-photo"></view>
     </view>
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 

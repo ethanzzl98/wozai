@@ -120,7 +120,7 @@ label {
   margin-top: 25rpx;
 } 
 
-.section-icon {
+.section-photo {
   background-image: url('https://cdn-icons-png.flaticon.com/512/44/44289.png');
   background-size: contain;
   background-repeat: no-repeat;
