@@ -7,7 +7,8 @@ Page({
      */
     data: {
         leaders: [],
-        active: true
+        active: true,
+        isLogin: false
     },
     
     /**
@@ -38,7 +39,8 @@ Page({
                 page.setData({
                     venue: res.data,
                     leaders: res.data.leaders,
-                    user: app.globalData.user
+                    user: app.globalData.user,
+                    isLogin: true
                 })
             }
         });
