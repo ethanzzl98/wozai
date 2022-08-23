@@ -2,58 +2,59 @@
 <view class="main">
 
     <form bindsubmit="save">
-      <view class="form-title">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
+        <view class="form-title">
+            <image class="logo" src="/images/logo.png"></image>
+            <view class="title">Add a venue</view>
+        </view>
 
-    <view class="section" >
-      <input data-name="name" bindinput="updateData" maxlength="15" value="{{venue.name}}" class="weui-input" auto-focus placeholder="Venue Name"/>
-    </view>
-
+    <view class="input-title">Venue name:</view>
     <view class="section">
-      <input data-name="name" maxlength="15" value="{{venue.name}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Address"/>
+        <input data-name="name"/>
     </view>
 
-    <view class="section" >
-      <input data-name="phone_number" bindinput="updateData" maxlength="15" value="{{venue.phone}}" class="weui-input" auto-focus placeholder="Phone Number"/>
+    <view class="input-title">Venue address:</view>
+    <view class="section">
+        <input data-name="address"/>
     </view>
 
-    <!-- <view class="page-section">
-      <view class="page-section-name">Category</view>
-      <view class="weui-cells weui-cells_after-name">
-        <checkbox-group bindchange="checkboxChange">
-          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
-            <view class="weui-cell__hd">
-              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
-            </view>
-            <view class="weui-cell__bd">{{item.name}}</view>
-          </label>
+    <view class="input-title">Phone:</view>
+    <view class="section">
+      <input data-name="phone"/>
+    </view>
+
+    <view class="input-title">Category:</view>
+        <checkbox-group name="checkbox">
+            <label><checkbox color="#394867" value="checkbox1"/>Bar</label>
+            <label><checkbox color="#394867" value="checkbox2"/>Beauty</label>
+            <label><checkbox color="#394867" value="checkbox3"/>Cafe</label>
+            <label><checkbox color="#394867" value="checkbox4"/>Education</label>
+            <label><checkbox color="#394867" value="checkbox5"/>Gym</label>
+            <label><checkbox color="#394867" value="checkbox6"/>Hookah</label>
+            <label><checkbox color="#394867" value="checkbox7"/>Museum</label>
+            <label><checkbox color="#394867" value="checkbox8"/>Park</label>
+            <label><checkbox color="#394867" value="checkbox9"/>Restaurant</label>
+            <label><checkbox color="#394867" value="checkbox10"/>Shopping</label>
+            <label><checkbox color="#394867" value="checkbox11"/>Sports</label>
         </checkbox-group>
-      </view>
-    </view> -->
 
-
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="search">
-                      Category {{array[index]}}
-                      <image src="../../images/Category.png" class="category"></image>
-              </view></picker>
-    
-    <view class="section">
-    <view>Hours of Operation</view>
+    <view class="hours">Opening hours:</view>
+    <view class="hours-section">
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
         <view class="picker"> Open: 
           <text class="section-picker">{{venue.open_time}}</text>
         </view>
       </picker>
-
+      
       <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
-        <view class="picker">
-          Close: <text class="section-picker">{{venue.close_time}}</text>
+        <view class="picker"> Close:
+            <text class="section-picker">{{venue.close_time}}</text>
         </view>
       </picker>
     </view>
 
-    <view class="section section-description">
-      <textarea data-name="description" value="{{venue.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
+    <view class="input-title">Specials:</view>
+    <view class="section">
+      <textarea data-name="specials"></textarea>
     </view>
 
     <image wx:if="{{img}}" src="{{img}}" mode="aspectFit"></image>
@@ -65,14 +66,6 @@
     </view>
     <view class="section" height="300rpx"><map height="600rpx"></map></view>
 
+        <button class="button-flex" bindtap="createLesson">Create venue</button>
     </form>
-
-    <view class="button-flex">
-      <button class="" bindtap="createLesson">Save</button>
-      <button class="" bindtap="goBack">Cancel</button>
-    </view>
-
-  <view>
-  <choose-Photo bind:closePhotoPicker="closePhotoPicker" bind:changePhoto="changePhoto" wx:if="{{showPhotoPicker}}" />
-  </view>
 </view>
