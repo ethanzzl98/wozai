@@ -34,7 +34,7 @@ Page({
               latitude: app.globalData.latitude,
               longitude: app.globalData.longitude,
             });
-            console.log(venues)
+            console.log("All the venues from the database:",venues)
             page.displayVenuesByCategory();
           }
         })
@@ -50,13 +50,12 @@ Page({
 
     onReady() {
         this.mapCtx = wx.createMapContext('myMap')
-        this.mapContext.moveToLocation();
+        this.mapCtx.moveToLocation();
     },
     
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
-        console.log("url:",`/pages/venues/show?id=${id}`)
         wx.navigateTo({
           url: `/pages/venues/show?id=${id}`,
         })
@@ -66,17 +65,16 @@ Page({
         this.setData({
             selectedCategory: this.data.array[e.detail.value]
         });
-        console.log(e.detail)
+        console.log("Change category:",e.detail.value);
         this.displayVenuesByCategory();
     },
 
     displayVenuesByCategory() {
         const page = this;
-        
         this.setData({
             venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
         })
-        console.log(page.data);
+        console.log("Venues displayed:", page.data);
     },
 
     /**

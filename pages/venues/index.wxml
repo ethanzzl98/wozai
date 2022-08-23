@@ -9,7 +9,7 @@
                 Choose your category {{array[index]}}
                 <image src="../../images/Category.png" class="category"></image>
         </view></picker>
-    <view wx:for="{{venuesFiltered}}" bindtap="goToShow" data-index="{{item.id}}">
+    <view wx:for="{{venuesFiltered}}" bindtap="goToShow" data-index="{{item.id}}" wx:key="id">
         <view class="card-venue" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
         <view class="venue-name">{{ item.name }}</view>
         </view>

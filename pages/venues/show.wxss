@@ -193,13 +193,15 @@ page {
 }
 
 .visits {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-self: flex-end;
     margin-bottom: 10rpx;
-    padding: 10rpx 20rpx;
     color: var(--theme-blue);
+    padding: 0 10rpx;
+    box-sizing: border-box;
 }
 
 .number {
@@ -219,11 +221,13 @@ page {
 }
 
 .p {
+    max-width: 100%;
     font-size: 32rpx;
     font-weight: 500;
-    text-overflow: clip;
-    height: 32rpx;
+    text-overflow: ellipsis;
+    height: 48rpx;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .inactive {
