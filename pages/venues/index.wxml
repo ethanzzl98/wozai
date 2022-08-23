@@ -1,17 +1,29 @@
 <!--pages/venues/index.wxml-->
 <view class="main">
     <view class="my-map-design">
-        <map id="myMap" class="my-map-designs" style="width:100%; height:100%;" show-location markers="{{markers}}" covers="{{covers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{14}}">
+        <map id="myMap"
+            class="my-map-designs"
+            style="width:100%; height:100%;"
+            show-location markers="{{markers}}"
+            covers="{{covers}}"
+            longitude="{{longitude}}"
+            latitude="{{latitude}}"
+            scale="{{14}}"
+            bindmarkertap="bindmarkertap">
         </map>
     </view>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="search">
-                Choose your category {{array[index]}}
-                <image src="../../images/Category.png" class="category"></image>
-        </view></picker>
+        <view class="search">
+            Choose your category {{array[index]}}
+            <image src="../../images/Category.png" class="category"></image>
+        </view>
+    </picker>
     <view wx:for="{{venuesFiltered}}" bindtap="goToShow" data-index="{{item.id}}" wx:key="id">
         <view class="card-venue" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;">
-        <view class="venue-name">{{ item.name }}</view>
+            <view class="venue-distance">
+                {{item.distanceString}}
+            </view>
+            <view class="venue-name">{{ item.name }}</view>
         </view>
     </view>
 </view>

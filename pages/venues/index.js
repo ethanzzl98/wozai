@@ -1,12 +1,8 @@
 // pages/venues/index.js
-const key = 'LF7BZ-EFY3X-EKR46-TQDA2-CJE43-5BBXH'; //使用在腾讯位置服务申请的key
+const key = 'IWOBZ-2QRCJ-C7LFD-FYGZY-45LDF-3VBTX'; //使用在腾讯位置服务申请的key
 const referer = 'Wozai'; //调用插件的app的名称
-const QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-// const location = JSON.stringify({
-//   latitude: 31.233827538484224, 
-//   longitude: 121.43734040846482
-// });
 const category = '生活服务,娱乐休闲';
 const app = getApp()
 Page({
@@ -28,30 +24,24 @@ Page({
             method: 'GET',
             header: app.globalData.header,
             success(res) {
-                const { venues } = res.data;
-                const markers = venues.map((venue) => {
-                    return {
-                        latitude: venue.latitude,
-                        longitude: venue.longitude,
-                        width: '60rpx',
-                        height: '90rpx',
-                        id: venue.id,
-                        callout: {
-                            display: 'BYCLICK',
-                            content: venue.name,
-                        }
-                    }
-                });
-                page.setData({
-                    venues: venues,
-                    markers: markers,
-                    latitude: app.globalData.latitude,
-                    longitude: app.globalData.longitude,
-                });
-                console.log("All the venues from the database:", venues)
-                page.displayVenuesByCategory();
+                page.storeData(res.data);
             }
         })
+    },
+
+    storeData(data) {
+        const page = this;
+        const { venues } = data;
+        const markers = page.getMarkersFromVenues(venues);
+        page.setDistances(venues);
+        page.setData({
+            markers: markers,
+            latitude: app.globalData.latitude,
+            longitude: app.globalData.longitude,
+        });
+        console.log("All the venues from the database:", venues)
+
+        
     },
 
     getLocation() {
@@ -62,9 +52,61 @@ Page({
                     latitude: res.latitude,
                     longitude: res.longitude
                 })
-                console.log(page.data)
+                console.log("User location:", page.data.longitude, page.data.latitude)
+                page.setDistances();
             }
         });
+    },
+
+    setDistances(venues) {
+        const page = this;
+        const locations = venues.map((venue) => {
+            return {
+                latitude: venue.latitude,
+                longitude: venue.longitude
+            };
+        });
+        qqmapsdk.calculateDistance({
+            to: locations,
+            sig: 'MsAdpInZqYv5wgssFi7ZmLXuM6LnYatr',
+            success: function(res) {//成功后的回调
+                console.log("qqmapsdk calculate:", res.result);
+                res = res.result;
+                for (let i = 0; i < res.elements.length; i++) {
+                    const dist = res.elements[i].distance
+                  venues[i].distance = dist;
+                  venues[i].distanceString = (dist < 1000 ?
+                    dist + ' m' : Math.floor(dist / 100) / 10 + ' km');
+                  console.log(`Distance to ${venues[i].name} is ${venues[i].distance}`);
+                }
+                venues.sort((a,b) => a.distance - b.distance);
+                page.setData({
+                    venues: venues
+                })
+            },
+            fail: function(error) {
+                console.error(error);
+            },
+            complete: function() {
+                page.displayVenuesByCategory();
+            }
+        })
+    },
+
+    getMarkersFromVenues(venues) {
+        return venues.map((venue) => {
+            return {
+                latitude: venue.latitude,
+                longitude: venue.longitude,
+                width: '60rpx',
+                height: '90rpx',
+                id: venue.id,
+                callout: {
+                    display: 'BYCLICK',
+                    content: venue.name,
+                }
+            }
+        })
     },
 
     onLoad() {
@@ -85,6 +127,10 @@ Page({
     onReady() {
         this.mapCtx = wx.createMapContext('myMap')
         this.mapCtx.moveToLocation();
+    },
+
+    bindmarkertap(e) {
+        console.log(e)
     },
 
     goToShow(e) {
@@ -109,19 +155,5 @@ Page({
             venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
         })
         console.log("Venues displayed:", page.data);
-    },
-
-    /**
-     * Called when page reach bottom
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * Called when user click on the top right corner to share
-     */
-    onShareAppMessage() {
-
     }
 })
