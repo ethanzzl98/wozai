@@ -1,10 +1,9 @@
 <!--pages/venues/show.wxml-->
 <view class="show-card">
     <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
-        <view class="share-div">
-            <button open-type="share" class="share-button" ><image class="share-icon" src="/images/share_button.png">
-            </image></button>
-        </view>
+        <button open-type="share" class="share-button">
+            <image class="share-icon" src="/images/share_button.png"></image>
+        </button>
         <view class="venue-title">{{venue.name}}</view>
     </view>
 
@@ -61,6 +60,7 @@
                 <view class="p">{{leaders[2].nickname}}</view>
             </view>
         </view>
+        <view class="third-place" wx:else></view>
     </view>
 
     <view>
