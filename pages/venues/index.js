@@ -1,6 +1,8 @@
 // pages/venues/index.js
 const key = 'LF7BZ-EFY3X-EKR46-TQDA2-CJE43-5BBXH'; //使用在腾讯位置服务申请的key
 const referer = 'Wozai'; //调用插件的app的名称
+const QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+let qqmapsdk;
 // const location = JSON.stringify({
 //   latitude: 31.233827538484224, 
 //   longitude: 121.43734040846482
@@ -12,68 +14,92 @@ Page({
     /**
      * Page initial data
      */
-    data:{
-        array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
+    data: {
+        array: ["All", "Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park", "Restaurant", "Shopping", "Sports"],
         selectedCategory: 'All',
         latitude: 31.233442,
         longitude: 121.437512
     },
-    
+
     getData() {
         let page = this;
         wx.request({
-          url: `${app.globalData.baseUrl}/venues`,
-          method: 'GET',
-          header: app.globalData.header,
-          success(res) {
-            const {venues} = res.data;
-            const markers = venues.map((venue) => {
-                return {
-                    latitude: venue.latitude,
-                    longitude: venue.longitude,
-                    width: '60rpx',
-                    height: '90rpx',
-                    id: venue.id
-                }
-            });
-            page.setData({
-              venues: venues,
-              markers: markers,
-              latitude: app.globalData.latitude,
-              longitude: app.globalData.longitude,
-            });
-            console.log("All the venues from the database:",venues)
-            page.displayVenuesByCategory();
-          }
+            url: `${app.globalData.baseUrl}/venues`,
+            method: 'GET',
+            header: app.globalData.header,
+            success(res) {
+                const { venues } = res.data;
+                const markers = venues.map((venue) => {
+                    return {
+                        latitude: venue.latitude,
+                        longitude: venue.longitude,
+                        width: '60rpx',
+                        height: '90rpx',
+                        id: venue.id,
+                        callout: {
+                            display: 'BYCLICK',
+                            content: venue.name,
+                        }
+                    }
+                });
+                page.setData({
+                    venues: venues,
+                    markers: markers,
+                    latitude: app.globalData.latitude,
+                    longitude: app.globalData.longitude,
+                });
+                console.log("All the venues from the database:", venues)
+                page.displayVenuesByCategory();
+            }
         })
-      },
-      onShow() {
+    },
+
+    getLocation() {
+        const page = this;
+        wx.getLocation({
+            success: function (res) {
+                page.setData({
+                    latitude: res.latitude,
+                    longitude: res.longitude
+                })
+                console.log(page.data)
+            }
+        });
+    },
+
+    onLoad() {
+        qqmapsdk = new QQMapWX({
+            key: key
+        });
+    },
+
+    onShow() {
         const page = this;
         if (app.globalData.header) {
-          page.getData()
+            page.getData()
         } else {
-          wx.event.on('loginFinish', page, page.getData)
+            wx.event.on('loginFinish', page, page.getData)
         }
-      },
+    },
 
     onReady() {
         this.mapCtx = wx.createMapContext('myMap')
         this.mapCtx.moveToLocation();
     },
-    
+
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
         wx.navigateTo({
-          url: `/pages/venues/show?id=${id}`,
+            url: `/pages/venues/show?id=${id}`,
         })
     },
-    
+
     bindPickerChange(e) {
         this.setData({
             selectedCategory: this.data.array[e.detail.value]
         });
-        console.log("Change category:",e.detail.value);
+        console.log("Change category:", e.detail.value);
         this.displayVenuesByCategory();
     },
 
