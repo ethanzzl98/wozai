@@ -67,8 +67,10 @@ page {
     font-size: 45rpx;
     font-weight: bold;
     border-radius: 50rpx;
-    width: 300rpx;
+    width: 330rpx;
     margin: 0 auto;
+    margin-bottom: 40rpx;
+    white-space: nowrap;
 }
 
 .tag {
@@ -81,7 +83,6 @@ page {
     margin-top: 10rpx;
     margin-bottom: 30rpx;
     margin-left: 35rpx;
-    /* margin-right: 5rpx; */
     font-weight: 500;
     width: fit-content;
 }

@@ -27,7 +27,15 @@ Page({
           header: app.globalData.header,
           success(res) {
             const {venues} = res.data;
-            const markers = venues;
+            const markers = venues.map((venue) => {
+                return {
+                    latitude: venue.latitude,
+                    longitude: venue.longitude,
+                    width: '60rpx',
+                    height: '90rpx',
+                    id: venue.id
+                }
+            });
             page.setData({
               venues: venues,
               markers: markers,

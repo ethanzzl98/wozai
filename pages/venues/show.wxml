@@ -7,10 +7,12 @@
         <view class="venue-title">{{venue.name}}</view>
     </view>
 
-    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">{{active ? 'Check in!' : 'Checked in!'}}</view>
+    <view class="checkin-button {{active ? '' : 'inactive'}}" bindtap="{{active ? 'checkin' : ''}}">
+        {{active ? 'Check in!' : 'Checked in for today'}}
+    </view>
 
     <view style="display: flex; flex-wrap: wrap;">
-         <block wx:for="{{venue.categories}}">
+         <block wx:for="{{venue.categories}}" wx:key="*this">
             <view class="tag">{{item}}</view>
         </block>
     </view>

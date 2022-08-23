@@ -8,14 +8,26 @@ Page({
     data: {
         leaders: [],
         active: true,
-        isLogin: false
+        isLogin: false,
     },
     
+    today() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const monthString = month < 10 ? '0' + month : month.toString();
+        const day = today.getDate();
+        const dayString = day < 10 ? '0' + day : day.toString();
+        return `${year}-${monthString}-${dayString}`;
+    },
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
         const page = this;
+        page.setData({
+            todayDate: page.today()
+        });
         app.globalData.venue_id = options.id;
         if (app.globalData.header) {
             page.getData()
@@ -40,7 +52,8 @@ Page({
                     venue: res.data,
                     leaders: res.data.leaders,
                     user: app.globalData.user,
-                    isLogin: app.globalData.user.avatar_url !== null
+                    isLogin: app.globalData.user.avatar_url !== null,
+                    active: page.data.todayDate !== res.data.last_visit
                 })
             }
         });
