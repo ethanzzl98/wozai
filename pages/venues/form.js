@@ -4,6 +4,10 @@ Page({
   
   data: {
     showIconPicker: false,
+    array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
+        selectedCategory: 'All',
+        latitude: 31.233442,
+        longitude: 121.437512
   },
 
   updateData(e) {
@@ -94,7 +98,7 @@ Page({
         user_id: app.globalData.user.id,
         start_date: page.getISODate(),
         start_time: "10:00",
-        end_time: "11:00",
+        end_time: "22:00",
       },
       id: null,
     };
