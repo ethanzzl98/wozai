@@ -1,14 +1,13 @@
 <!--pages/venues/show.wxml-->
 <view class="show-card">
     <view class="venue-image" style="background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.7)), url({{venue.photo}}); background-size: cover;">
-        <view class="share-div">
-            <button open-type="share" class="share-button" ><image class="share-icon" src="/images/share_button.png">
-            </image></button>
-        </view>
+        <button open-type="share" class="share-button">
+            <image class="share-icon" src="/images/share_button.png"></image>
+        </button>
         <view class="venue-title">{{venue.name}}</view>
     </view>
 
-    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">{{active ? 'Check-in!' : 'Checked-in'}}</view>
+    <view class="checkin-button {{active ? '' : 'inactive'}}" style="margin-bottom: 40rpx" bindtap="{{active ? 'checkin' : ''}}">{{active ? 'Check in!' : 'Checked in!'}}</view>
 
     <view style="display: flex; flex-wrap: wrap;">
          <block wx:for="{{venue.categories}}">
@@ -30,8 +29,6 @@
             <view class="time">{{venue.open_time}} - {{venue.close_time}}</view>
         </view>
     </view>
-
-
     <view class="leaderboard-title">Leaderboard</view>
     <view class="leaderboard">
         <view class="be-first" wx:if="{{leaders.length === 0}}">Be the first to check-in!</view>
@@ -42,8 +39,8 @@
                 <view class="p">{{leaders[1].nickname}}</view>
             </view>
         </view>
-
         <view class="second-place" wx:else></view>
+
         <view class="first-place" wx:if="{{leaders.length > 0}}">
             <image class="avatar" src="{{leaders[0].avatar_url || '/images/avatar.png'}}"></image>
             <image class="crown" src="/images/crown.png"></image>
@@ -52,8 +49,8 @@
                 <view class="p">{{leaders[0].nickname}}</view>
             </view>
         </view>
-
         <view class="first-place" wx:else></view>
+        
         <view class="third-place" wx:if="{{leaders.length > 2}}">
             <image class="avatar" src="{{leaders[2].avatar_url || '/images/avatar.png'}}"></image>
             <view class="visits">
@@ -61,6 +58,7 @@
                 <view class="p">{{leaders[2].nickname}}</view>
             </view>
         </view>
+        <view class="third-place" wx:else></view>
     </view>
 
     <view>

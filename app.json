@@ -10,13 +10,13 @@
     "pages/fake/venues/index",
     "pages/fake/loading/index"
   ],
+  
   "window": {
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#e5eaf8",
     "navigationBarTitleText": "Wo Zai",
     "navigationBarTextStyle":"black"
   },
-
 
   "tabBar": {
     "color": "9BA4B4",

@@ -40,7 +40,7 @@ Page({
                     venue: res.data,
                     leaders: res.data.leaders,
                     user: app.globalData.user,
-                    isLogin: true
+                    isLogin: app.globalData.user.avatar_url !== null
                 })
             }
         });
@@ -83,14 +83,14 @@ Page({
             avatar_url: page.data.avatarUrl,
             nickname: page.data.nickname
         }
-        console.log("body:", body)
+        console.log("Request body:", body)
         wx.request({
           url: `${app.globalData.baseUrl}/users/profile`,
           method: 'POST',
           header: app.globalData.header,
           data: body,
           success(res) {
-              console.log("user profile updated")
+              console.log("User profile updated")
           }
         })
     },
@@ -98,10 +98,12 @@ Page({
     actualCheckIn(id){
         let page = this
         wx.showModal({
-            title: "Check-in?",
+            title: "Check in?",
             content: 'Would you like to check in here?',
             cancelText: 'No',
+            cancelColor: 'red',
             confirmText: 'Yes',
+            confirmColor: 'green',
             success (res) {
               if (res.confirm) {
                 wx.request({
@@ -116,7 +118,7 @@ Page({
                         })
                         
                         wx.showToast({
-                          title: 'Checked-in',
+                          title: 'Checked in!',
                           duration: 2000,
                           icon: 'success'
                         })
@@ -162,7 +164,7 @@ Page({
      */
     onShareAppMessage() {
         const id = this.data.venue.id;
-        console.log(id)
+        console.log("Venue id:", id)
         return {
           title: this.data.venue.name,
           imgaUrl: this.data.venue.photo_url,
