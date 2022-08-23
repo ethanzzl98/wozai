@@ -37,16 +37,18 @@ page {
     margin-left: 30rpx;
 }
 
-.share-div {
+.share-button {
     position: absolute;
     top: 20rpx;
     right: 20rpx;
-}
-
-.share-button {
-    width: 110rpx;
+    width: 70rpx;
     height: 70rpx;
     background-color: transparent;
+    padding: 0;
+}
+
+.share-button::after {
+    border: none;
 }
 
 .share-icon {
@@ -219,6 +221,9 @@ page {
 .p {
     font-size: 32rpx;
     font-weight: 500;
+    text-overflow: clip;
+    height: 32rpx;
+    white-space: nowrap;
 }
 
 .inactive {
