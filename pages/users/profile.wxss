@@ -83,13 +83,15 @@ page, view {
     margin-left: 15rpx;
 }
 
-.recents-swiper {
+.recents-swiper, .frequents-swiper {
     width: auto;
     height: 300rpx;
+
 }
 
 .swiper-item {
     box-sizing: border-box;
+    display: block;
     width: auto;
     height: 300rpx;
     /* border: 2rpx solid rgb(57,72,103); */
@@ -120,6 +122,7 @@ page, view {
     margin-left: 20rpx;
     font-size: 32rpx;
     font-weight: 500;
+    width: fit-content;
 }
 
 .scroll {

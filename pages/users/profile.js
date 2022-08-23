@@ -59,7 +59,7 @@ Page({
                 page.setData({
                     recents: recents,
                 });
-                console.log(recents)
+                console.log("recent visits:", recents)
             }
         });
         wx.request({
@@ -71,7 +71,7 @@ Page({
                 page.setData({
                     frequents: frequents
                 });
-                console.log("frequents:",frequents)
+                console.log("frequent visits:",frequents)
             }
         })
     },
@@ -92,7 +92,7 @@ Page({
         this.setData({
             isLogin: this.data.nickname !== defaultNickname
         })
-        console.log(this.data)
+        console.log("Profile page data:", this.data)
         this.getData()
     },
     goToShow(e) {
