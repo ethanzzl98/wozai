@@ -40,22 +40,6 @@ Page({
             longitude: app.globalData.longitude,
         });
         console.log("All the venues from the database:", venues)
-
-        
-    },
-
-    getLocation() {
-        const page = this;
-        wx.getLocation({
-            success: function (res) {
-                page.setData({
-                    latitude: res.latitude,
-                    longitude: res.longitude
-                })
-                console.log("User location:", page.data.longitude, page.data.latitude)
-                page.setDistances();
-            }
-        });
     },
 
     setDistances(venues) {
@@ -101,7 +85,8 @@ Page({
                 width: '60rpx',
                 height: '90rpx',
                 id: venue.id,
-                callout: {
+                venue: venue,
+                customCallout: {
                     display: 'BYCLICK',
                     content: venue.name,
                 }
@@ -117,6 +102,7 @@ Page({
 
     onShow() {
         const page = this;
+
         if (app.globalData.header) {
             page.getData()
         } else {
@@ -130,6 +116,9 @@ Page({
     },
 
     bindmarkertap(e) {
+        // this.setData({
+        //     showCallout: true
+        // });
         console.log(e)
     },
 
