@@ -34,7 +34,19 @@ App({
     // baseUrl: 'http://localhost:3000/api/v1',
     user: null,
     latitude: 31.233442,
-    longitude: 121.437512
-
+    longitude: 121.437512,
+    categories: [
+        "Bar",
+        "Beauty",
+        "Cafe",
+        "Education",
+        "Gym",
+        "Hookah",
+        "Museum",
+        "Park",
+        "Restaurant",
+        "Shopping",
+        "Sports"
+    ]
   }
 })
