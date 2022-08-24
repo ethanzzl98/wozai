@@ -1,8 +1,9 @@
 <!--pages/venues/form.wxml-->
+
 <view class="page-container">
 
-    <form bindsubmit="save">
-      <view class="form-title">{{isEdit ? "Edit Venue" : "Add Venue"}}</view>
+    <!-- <form bindsubmit="save">
+      <view class="form-title">{{isEdit ? "Edit Venue" : "Add Venue"}}</view> -->
 
     <view class="section" >
       <input data-name="name" bindinput="updateData" maxlength="15" value="{{venue.name}}" class="weui-input" auto-focus placeholder="Venue Name"/>
@@ -56,6 +57,36 @@
       <textarea data-name="description" value="{{venue.description}}" bindinput="updateData" class="weui-input" auto-focus placeholder="Specials"/>
     </view>
 
+
+   <!-- <view class="section" >
+      <input data-name="phone_number" bindinput="updateData" maxlength="15" value="{{venue.subject}}" class="weui-input" auto-focus placeholder="Phone Number"/>
+    </view> -->
+   <!-- <view class='demand-col  demand-col2'> -->
+
+    <view class='section'>
+      <input data-name="upload_photo" bindinput="chooseImg" maxlength="15" value="{{venue.add}}" class="weui-input" auto-focus placeholder="Upload Photo:"/>
+    <!-- </view> -->
+      <!-- <text> Upload Photo: </text> -->
+    <!-- </view> -->
+
+     <!-- <view class='up-img' bindtap="chooseImg"> -->
+       <image src="{{img1}}" catchTap="chooseImageTap" class="section-icon" mode="aspectFit"></image>
+     </view>
+     </view>
+     <!-- </view> -->
+     <!-- <view class='up-img' bindtap="chooseImg">
+       <image src="{{img2}}" catchTap="chooseImageTap" mode="aspectFit"></image>
+     </view>
+     <view class='up-img' bindtap="chooseImg">
+       <image src="{{img3}}" catchTap="chooseImageTap" mode="aspectFit"></image>
+     </view>
+     <view class='up-img' bindtap="chooseImg">
+       <image src="{{img4}}" catchTap="chooseImageTap" mode="aspectFit"></image>
+     </view> -->
+   <!-- </view> -->
+ <!-- </view> -->
+
+<!-- 
     <view class="section" bindtap="choosePhoto" >
       <input wx:if="{{!lvenue.icon_url}}" class="weui-input"  auto-focus placeholder="Choose Photo"/>
       <image wx:else src="{{venue.icon_url}}"/>
@@ -70,7 +101,7 @@
       <button class="" bindtap="goBack">Cancel</button>
     </view>
 
-  <view>
-  <choose-Photo bind:closePhotoPicker="closePhotoPicker" bind:changePhoto="changePhoto" wx:if="{{showPhotoPicker}}" />
-  </view>
+
+
+
 </view>

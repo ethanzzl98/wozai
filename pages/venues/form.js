@@ -3,6 +3,14 @@ const app = getApp();
 Page({
   
   data: {
+
+    arrReview: ['1', '2', '3'],
+       Arradress: ['Your Home ', ' My Home ',' Home '],
+        img1: '/images/addimg.png',
+        img2: '/images/addimg.png',
+        img3: '/images/addimg.png',
+        img4: '/images/addimg.png',
+
     showIconPicker: false,
     array: ["All","Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park","Restaurant", "Shopping", "Sports"],
         selectedCategory: 'All',
@@ -17,6 +25,8 @@ Page({
           {value: 'ENG', name: '英国'},
           {value: 'FRA', name: '法国'}
         ]
+
+        
   },
 
   updateData(e) {
@@ -42,7 +52,7 @@ Page({
     this.setData({'venue.end_time': e.detail.value })
   },
 
-  chooseIcon() {
+  chooseImg() {
     this.setData({
       showIconPicker: true
     })
@@ -136,6 +146,26 @@ Page({
     }
 
   },
+
+  chooseImg: function() {
+    var that = this;
+    wx.chooseImage({
+             Count: 5, // Default 9 
+             Siztype: ['Original', 'compressed'], // can be specified as the original image or a compressed map, the default is 
+             SourceType: ['Album', 'Camera'], // You can specify the source is the album or the camera, the default is 
+      success: function(res) {
+                //  / / Return the local file path list of selected photos, TempFilePath can display pictures as an IMG tag of SRC attribute 
+        console.log(res)
+        that.setData({
+          img1: res.tempFilePaths[0],
+          // img2: res.tempFilePaths[1],
+          // img3: res.tempFilePaths[2],
+          // img4: res.tempFilePaths[3],
+        })
+      }
+    })
+  },
+
 })
 
 

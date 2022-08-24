@@ -20,9 +20,9 @@
     <view class="info-div">
         <view class="venue-info-card">
             <view class="info-header">ADDRESS</view>
-            <view class="info-content">{{venue.address}}</view>
-            <view class="info-header">PHONE</view>
-            <view class="info-content">{{venue.phone === 'null'? '-' : venue.phone}}</view>            
+            <view class="info-content" bindtap="goToMap">{{venue.address}}</view>
+            <view class="info-header" >PHONE</view>
+            <view class="info-content" bindtap="makeCall">{{venue.phone === 'null'? '-' : venue.phone}}</view>            
             <view wx:if="{{venue.discount !== 'null'}}">
                 <view class="info-header">NOTES</view>
                 <view class="info-content">{{venue.discount}}</view>

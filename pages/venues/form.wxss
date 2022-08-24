@@ -136,3 +136,45 @@
 .button-flex {
   display: flex; 
 }
+
+.demand-col {
+  margin: auto;
+  height: 140rpx;
+  width: 80%;
+  background: #f1f1f1;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  padding: 30rpx 30rpx;
+  display: flex;
+}
+ 
+.demand-col textarea {
+  height: 240rpx;
+  width: 600rpx;
+}
+ 
+.up-img {
+  /* height: 136rpx;
+  width: 136rpx;
+  border: 1px solid #fff;
+  background: #fff;
+  margin-left: 10rpx; */
+/* 
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+  margin: 56rpx 32rpx;
+  padding: 40rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  color: rgb(2, 2, 2);
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 4px; */
+
+
+}
+ 
+.up-img image {
+  height: 136rpx;
+  width: 136rpx;
+}

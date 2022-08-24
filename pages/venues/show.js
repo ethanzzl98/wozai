@@ -10,6 +10,24 @@ Page({
         active: true,
         isLogin: false,
     },
+
+    makeCall(e){
+        const phoneNumber = this.data.venue.phone
+        wx.makePhoneCall({
+            phoneNumber
+            })
+    },
+
+    goToMap(e){
+        const latitude = this.data.venue.latitude
+        const longitude = this.data.venue.longitude
+        const name = this.data.venue.name
+        wx.openLocation({
+          latitude,
+          longitude,
+          name
+        })
+    },
     
     today() {
         const today = new Date();
