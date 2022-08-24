@@ -103,7 +103,7 @@ Page({
                 id: venue.id,
                 callout: {
                     display: 'BYCLICK',
-                    content: venue.name,
+                    content: venue.address,
                 }
             }
         })

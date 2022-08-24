@@ -132,6 +132,7 @@
   text-shadow: 2rpx 2rpx black;
   box-shadow: 0 0 2rpx rgb(1,1,1);
 }
+
 .btn-form {
   display: flex;
     justify-content: center;
