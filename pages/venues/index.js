@@ -4,6 +4,8 @@ const app = getApp();
 const key = app.globalData.key;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
+const defaultIcon = '../../images/markerIcon.png';
+const activeIcon = '../../images/activeMarkerIcon.png';
 Page({
 
     /**
@@ -85,7 +87,7 @@ Page({
                 width: '90rpx',
                 height: '90rpx',
                 id: venue.id,
-                iconPath:'../../images/markerIcon.png',
+                iconPath: defaultIcon,
                 venue: venue,
                 customCallout: {
                     display: 'BYCLICK',
@@ -116,15 +118,27 @@ Page({
         this.mapCtx.moveToLocation();
     },
 
+    // If I have time, I will fix this function
     bindmarkertap(e) {
         console.log(e)
         const markerIndex = this.data.markers.findIndex((marker) => marker.id === e.markerId);
         console.log(markerIndex);
+        // this.cleanMarkerStyle();
+        const markers = this.data.markers;
+        markers[markerIndex].iconPath = activeIcon;
+        // this.setData({
+        //     markers: markers
+        // })
     },
 
     cleanMarkerStyle() {
         const markers = this.data.markers;
-
+        for (let marker in markers) {
+            marker.iconPath = defaultIcon;
+        }
+        this.setData({
+            markers: markers
+        })
     },
 
     bindcallouttap(e) {
