@@ -24,6 +24,7 @@ Page({
             method: 'GET',
             header: app.globalData.header,
             success(res) {
+                console.log('res grom GET venues: ', res.data)
                 page.storeData(res.data);
             }
         })
