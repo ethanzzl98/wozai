@@ -3,25 +3,65 @@
     width: auto;
     height: 650rpx;
     margin-bottom: 40rpx;
-    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0, 0, 0, 0.25);
     overflow: hidden;
+}
+
+.customCallout {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    display: inline-flex;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.callout-card-venue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300rpx;
+    height: 200rpx;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.callout-image {
+    position: absolute;
+    object-fit: contain;
+}
+
+.callout-content {
+    text-align: center;
+    margin: 15rpx;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: white;
+    z-index: 2;
 }
 
 .category {
     height: 40rpx;
     width: 40rpx;
-    
+
 }
 
 .search {
     width: auto;
     background: #FFFFFF;
     border: 2rpx solid var(--theme-blue);
-    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0, 0, 0, 0.25);
     /* border-radius: 50rpx; */
     padding: 10rpx 20rpx;
-    color: rgb(155,164,180);
-    font-weight: 400; 
+    color: rgb(155, 164, 180);
+    font-weight: 400;
     text-align: right;
     display: flex;
     justify-content: space-between;
@@ -33,11 +73,11 @@
     width: auto;
     margin-top: 40rpx;
     margin-bottom: 40rpx;
-    box-shadow: 0rpx 8rpx 8rpx rgba(0,0,0,0.25);
+    box-shadow: 0rpx 8rpx 8rpx rgba(0, 0, 0, 0.25);
     border-radius: 50rpx;
 }
 
-.venue-name{
+.venue-name {
     position: absolute;
     bottom: 20rpx;
     left: 20rpx;
