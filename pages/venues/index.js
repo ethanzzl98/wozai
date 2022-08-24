@@ -1,10 +1,9 @@
 // pages/venues/index.js
-const key = 'IWOBZ-2QRCJ-C7LFD-FYGZY-45LDF-3VBTX'; //使用在腾讯位置服务申请的key
-const referer = 'Wozai'; //调用插件的app的名称
+const category = '生活服务,娱乐休闲';
+const app = getApp();
+const key = app.globalData.key;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-const category = '生活服务,娱乐休闲';
-const app = getApp()
 Page({
 
     /**
@@ -13,6 +12,7 @@ Page({
     data: {
         array: ["All", "Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park", "Restaurant", "Shopping", "Sports"],
         selectedCategory: 'All',
+        hasSelected: false,
         latitude: 31.233442,
         longitude: 121.437512
     },
@@ -60,9 +60,9 @@ Page({
                     const dist = res.elements[i].distance
                   venues[i].distance = dist;
                   venues[i].distanceString = (dist < 1000 ?
-                    dist + ' m' : Math.floor(dist / 100) / 10 + ' km');
-                  console.log(`Distance to ${venues[i].name} is ${venues[i].distance}`);
+                    dist + ' m' : Math.floor(dist / 100) / 10 + ' km'); 
                 }
+                console.log(`Distance to ${venues[0].name} is ${venues[0].distance}`);
                 venues.sort((a,b) => a.distance - b.distance);
                 page.setData({
                     venues: venues
@@ -82,9 +82,10 @@ Page({
             return {
                 latitude: venue.latitude,
                 longitude: venue.longitude,
-                width: '60rpx',
+                width: '90rpx',
                 height: '90rpx',
                 id: venue.id,
+                iconPath:'../../images/markerIcon.png',
                 venue: venue,
                 customCallout: {
                     display: 'BYCLICK',
@@ -116,15 +117,27 @@ Page({
     },
 
     bindmarkertap(e) {
-        // this.setData({
-        //     showCallout: true
-        // });
         console.log(e)
+        const markerIndex = this.data.markers.findIndex((marker) => marker.id === e.markerId);
+        console.log(markerIndex);
+    },
+
+    cleanMarkerStyle() {
+        const markers = this.data.markers;
+
+    },
+
+    bindcallouttap(e) {
+        this.navigateToShow(e.detail.markerId);
     },
 
     goToShow(e) {
         const id = e.currentTarget.dataset.index;
         app.globalData.venue_id = id;
+        this.navigateToShow(id);
+    },
+
+    navigateToShow(id) {
         wx.navigateTo({
             url: `/pages/venues/show?id=${id}`,
         })
@@ -132,7 +145,8 @@ Page({
 
     bindPickerChange(e) {
         this.setData({
-            selectedCategory: this.data.array[e.detail.value]
+            selectedCategory: this.data.array[e.detail.value],
+            hasSelected: true
         });
         console.log("Change category:", e.detail.value);
         this.displayVenuesByCategory();

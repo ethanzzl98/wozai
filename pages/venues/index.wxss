@@ -1,4 +1,19 @@
 /* pages/venues/index.wxss */
+page {
+    --header-radius: 300rpx;
+}
+
+.header-circle {
+    position: absolute;
+    left: 0;
+    top: calc(var(--header-radius) * -1);
+    width: 100%;
+    height: calc(var(--header-radius) * 2);
+    z-index: -1;
+    background-color: var(--theme-blue);
+    border-radius: 50%;
+}
+
 .my-map-design {
     width: auto;
     height: 650rpx;
