@@ -9,63 +9,55 @@
 
     <view class="input-title">Venue name:</view>
     <view class="section">
-        <input data-name="name"/>
+        <input bindinput="addData" data-type="name" name="name" value="{{form.name}}"/>
     </view>
 
     <view class="input-title">Venue address:</view>
     <view class="section">
-        <input data-name="address"/>
+        <input name="address" bindtap="toPosition" value="{{form.address}}"/>
     </view>
 
     <view class="input-title">Phone:</view>
     <view class="section">
-      <input data-name="phone"/>
+      <input bindinput="addData" data-type="phone" name="phone"/>
     </view>
 
     <view class="input-title">Category:</view>
-        <checkbox-group name="checkbox">
-            <label><checkbox color="#394867" value="checkbox1"/>Bar</label>
-            <label><checkbox color="#394867" value="checkbox2"/>Beauty</label>
-            <label><checkbox color="#394867" value="checkbox3"/>Cafe</label>
-            <label><checkbox color="#394867" value="checkbox4"/>Education</label>
-            <label><checkbox color="#394867" value="checkbox5"/>Gym</label>
-            <label><checkbox color="#394867" value="checkbox6"/>Hookah</label>
-            <label><checkbox color="#394867" value="checkbox7"/>Museum</label>
-            <label><checkbox color="#394867" value="checkbox8"/>Park</label>
-            <label><checkbox color="#394867" value="checkbox9"/>Restaurant</label>
-            <label><checkbox color="#394867" value="checkbox10"/>Shopping</label>
-            <label><checkbox color="#394867" value="checkbox11"/>Sports</label>
+        <checkbox-group name="categories" bindchange="checkboxChange">
+            <label wx:for="{{items}}" wx:key="{{items.value}}">
+                <checkbox color="#394867" value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
         </checkbox-group>
 
     <view class="hours">Opening hours:</view>
     <view class="hours-section">
-      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindOpenTimeChange">
         <view class="picker"> Open: 
-          <text class="section-picker">{{venue.open_time}}</text>
+          <text class="section-picker">{{form['open_time']}}</text>
         </view>
       </picker>
       
-      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindCloseTimeChange">
         <view class="picker"> Close:
-            <text class="section-picker">{{venue.close_time}}</text>
+            <text class="section-picker">{{form['close_time']}}</text>
         </view>
       </picker>
     </view>
 
     <view class="input-title">Specials:</view>
     <view class="section">
-      <textarea data-name="specials"></textarea>
+      <textarea bindinput="addData" data-type="discount" name="discount"></textarea>
     </view>
 
     <view class="input-title">Add a photo:</view>
-    <image wx:if="{{img}}" mode="aspectFit" src="{{img}}"></image>
+    <image wx:if="{{photo}}" mode="aspectFit" src="{{photo}}"></image>
     <view class="section" bindtap="chooseImg">
-        <view wx:if="{{!venue.photo_url}}" class="section-photo"></view>
+        <view wx:if="{{!venue.photo}}" class="section-photo"></view>
     </view>
 
-    <view class="section" height="300rpx"><map height="600rpx"></map></view>
-
-    <button class="button-flex" bindtap="createLesson">Create venue</button>
+    <button class="button-flex" bindtap="save">Create venue</button>
 
     </form>
 </view>
+
+<!-- <view class="section" height="300rpx"><map height="600rpx"></map></view> -->

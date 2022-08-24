@@ -44,7 +44,7 @@ checkbox {
 }
 
 label {
-    font-size: 34rpx;
+    font-size: 30rpx;
     color: var(--theme-blue);
 }
 
