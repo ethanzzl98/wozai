@@ -1,6 +1,6 @@
 // app.js
 import event from './utils/event'
-wx.event = event
+wx.event = event;
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -35,6 +35,7 @@ App({
     user: null,
     latitude: 31.233442,
     longitude: 121.437512,
+    key: 'IWOBZ-2QRCJ-C7LFD-FYGZY-45LDF-3VBTX',
     categories: [
         "Bar",
         "Beauty",

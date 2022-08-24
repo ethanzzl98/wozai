@@ -1,11 +1,12 @@
 <!--pages/venues/index.wxml-->
 <view class="main">
+    <!-- <view class="header-circle"></view> -->
     <view class="my-map-design">
-        <map id="myMap" class="my-map-designs" style="width:100%; height:100%;" show-location markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{14}}" bindmarkertap="bindmarkertap">
+        <map id="myMap" class="my-map-designs" style="width:100%; height:100%;" show-location markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{14}}" bindmarkertap="bindmarkertap" bindcallouttap="bindcallouttap">
             <cover-view slot="callout" >
                 <block wx:for="{{markers}}" wx:key="id">
-                    <cover-view  class="callout-card-venue" marker-id="{{item.id}}" bindtap="goToShow" data-index="{{item.id}}">
-                        <cover-image class="callout-image" src="{{item.venue.photo}}" ></cover-image>
+                    <cover-view class="callout-card-venue" marker-id="{{item.id}}">
+                        <cover-image class="callout-image" src="{{item.venue.photo}}" bindtap="goToShow" data-index="{{item.id}}"></cover-image>
                         <cover-view class="callout-content">
                             {{item.venue.name}}
                         </cover-view>
@@ -16,7 +17,8 @@
     </view>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         <view class="search">
-            Choose your category {{array[index]}}
+            <text wx:if="{{!hasSelected}}">Choose your category</text>
+            <text wx:else style="color: black;">{{selectedCategory}}</text>
             <image src="../../images/Category.png" class="category"></image>
         </view>
     </picker>

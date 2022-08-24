@@ -20,4 +20,5 @@ page {
     height: 100vh;
     overflow-y: scroll;
     padding: var(--page-padding);
+    position: relative;
 }
