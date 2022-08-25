@@ -85,7 +85,7 @@ Page({
       var that = this;
       const form = that.data.form
       wx.chooseImage({
-               Count: 5, // Default 9 
+               Count: 1, // Default 9 
                Siztype: ['Original', 'compressed'], // can be specified as the original image or a compressed map, the default is 
                SourceType: ['Album', 'Camera'], // You can specify the source is the album or the camera, the default is 
         success: function(res) {
@@ -144,9 +144,13 @@ Page({
   },
 
   onShow(){
-      if (wx.getStorageSync('new')) this.setData({form: {}})
+      if (wx.getStorageSync('new')) {
+            this.setData({
+                form: {},
+                photoPath: null
+            })
+        }
       wx.setStorageSync('new', false)
-      
   },
 
 //   onShow() {
