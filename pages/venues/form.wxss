@@ -107,10 +107,18 @@ label {
   color: rgb(112, 108, 108);
 }
 
-.section image {
-  height: 100rpx;
-  width: 100rpx;
-  margin-top: 10rpx;
+.image-container {
+    /* border: 5rpx dashed black; */
+  height: 500rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+    height: 100%;
+    object-fit: contain;
 }
 
 .close-btn {
@@ -121,12 +129,16 @@ label {
 } 
 
 .section-photo {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/44/44289.png');
+  
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.5;
   background-position: center;
   padding: 20rpx 20rpx;
+}
+
+.section-photo-default {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/44/44289.png');
 }
 
 .button-flex {
@@ -136,5 +148,6 @@ label {
     font-weight: bold;
     border-radius: 50rpx;
     width: 450rpx;
-    margin-bottom: 30rpx;
+    margin-top: 80rpx;
+    margin-bottom: 50rpx;
 }

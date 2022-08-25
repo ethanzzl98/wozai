@@ -3,7 +3,7 @@ const app = getApp();
 const key = app.globalData.key;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-const allowCheckinDistance = 100;
+const allowCheckinDistance = 1000;
 Page({
 
     /**
@@ -121,9 +121,9 @@ Page({
                 title: "Check in?",
                 content: 'Would you like to check in here?',
                 cancelText: 'No',
-                cancelColor: 'red',
+                cancelColor: '#14274E',
                 confirmText: 'Yes',
-                confirmColor: 'green',
+                confirmColor: '#14274E',
                 success(res) {
                     if (res.confirm) {
                         page.actualCheckin(res);
@@ -135,7 +135,8 @@ Page({
                 showCancel: false,
                 title: "You are too far away to check-in",
                 content: "Please go to the venue to check-in.",
-                confirmText: 'OK'
+                confirmText: 'OK',
+                confirmColor: '#14274E'
             })
         }
     },

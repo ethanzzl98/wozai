@@ -11,7 +11,7 @@
         <view>
             <view class="title">Recent visits:</view>
             <swiper class="recents-swiper">
-                <block wx:for="{{recents}}">
+                <block wx:for="{{recents}}" wx:key="id">
                     <swiper-item>
                         <view class="swiper-item" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;" bindtap="goToShow" data-index="{{item.id}}">
                             <image class="scroll-arrow" src="/images/arrow_right.png"></image>
@@ -25,7 +25,7 @@
         <view>
             <view class="title">Frequent visits:</view>
             <swiper class="frequents-swiper">
-                <block wx:for="{{frequents}}">
+                <block wx:for="{{frequents}}" wx:key="id">
                     <swiper-item>
                         <view class="swiper-item" data-index="{{item.id}}" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.7)), url({{item.photo}}); background-size: cover;" bindtap="goToShow">
                             <image class="scroll-arrow" src="/images/arrow_right.png"></image>
