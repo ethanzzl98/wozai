@@ -36,6 +36,14 @@ Page({
         const page = this;
         const { venues } = data;
         const markers = page.getMarkersFromVenues(venues);
+        // wx.getFuzzyLocation({
+        //     type: 'wgs84',
+        //     success (res) {
+        //         const latitude = res.latitude
+        //         const longitude = res.longitude
+        //         console.log("lat:",latitude,"lon:",longitude)
+        //     }
+        // });
         page.setDistances(venues);
         page.setData({
             markers: markers,
