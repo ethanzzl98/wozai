@@ -13,6 +13,8 @@ Page({
         leaders: [],
         active: true,
         isLogin: false,
+        latitude: 31.23515,
+        longitude: 121.43956
     },
 
     today() {
@@ -152,6 +154,10 @@ Page({
         console.log("location:",location)
         if (page.data.distance === undefined) {
             qqmapsdk.calculateDistance({
+                from: {
+                    longitude: page.data.longitude,
+                    latitude: page.data.latitude
+                },
                 to: location,
                 sig: 'MsAdpInZqYv5wgssFi7ZmLXuM6LnYatr',
                 success: function(res) {//成功后的回调

@@ -44,7 +44,7 @@
 
   "sitemapLocation": "sitemap.json",
   "requiredPrivateInfos": [
-      "getFuzzyLocation",
+      "getLocation",
       "chooseLocation"
   ]
 }
