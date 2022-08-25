@@ -102,7 +102,7 @@ Page({
       let page = this;
       let categories = []
       let { items, form } = page.data
-    //   console.log({e});
+      console.log({e});
     items.forEach((item) => {
         if (item.checked) {
             categories = [ ...categories, item.name ]
