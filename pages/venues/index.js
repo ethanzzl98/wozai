@@ -39,8 +39,6 @@ Page({
         page.setDistances(venues);
         page.setData({
             markers: markers,
-            latitude: app.globalData.latitude,
-            longitude: app.globalData.longitude,
         });
         console.log("All the venues from the database:", venues)
     },
