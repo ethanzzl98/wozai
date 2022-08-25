@@ -19,6 +19,7 @@ Page({
           {value: "sports", name: "Sports"}
       ],
       form: {},
+      photoPath: ''
   },
 
   addData(e) {
@@ -89,9 +90,9 @@ Page({
                SourceType: ['Album', 'Camera'], // You can specify the source is the album or the camera, the default is 
         success: function(res) {
           console.log(res)
-          form['photo'] = res.tempFilePaths[0]
+        //   form['photo'] = res.tempFilePaths[0]
           that.setData({
-            form
+            photoPath: res.tempFilePaths[0]
           })
         }
       })
@@ -122,12 +123,21 @@ Page({
         },
         success(res) {
             console.log(res)
-            wx.setStorageSync('new', true)
-            // wx.navigateTo({
-            //   url: `/pages/venues/show?id=${res.data.id}`,
-            // })
-            wx.switchTab({
-              url: '/pages/venues/index',
+            wx.uploadFile({
+              filePath: page.data.photoPath,
+              name: 'file',
+              url: `${app.globalData.baseUrl}/venues/${res.data.id}/upload`,
+              header: app.globalData.header,
+              success(res) {
+                console.log('this is uploaded successfully', res)
+                wx.setStorageSync('new', true)
+                // wx.navigateTo({
+                //   url: `/pages/venues/show?id=${res.data.id}`,
+                // })
+                wx.switchTab({
+                  url: '/pages/venues/index',
+                })
+              }
             })
         }
       })
