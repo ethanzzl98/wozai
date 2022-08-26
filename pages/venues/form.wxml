@@ -7,55 +7,58 @@
             <view class="title">Add a venue</view>
         </view>
 
-    <view class="input-title">Venue name:</view>
-    <view class="section">
-        <input bindinput="addData" data-type="name" name="name" value="{{form.name}}"/>
-    </view>
+        <view class="input-title">Venue name:</view>
+        <view class="section">
+            <input bindinput="addData" data-type="name" name="name" value="{{form.name}}" />
+        </view>
 
-    <view class="input-title">Venue address:</view>
-    <view class="section">
-        <input name="address" bindtap="toPosition" value="{{form.address}}"/>
-    </view>
+        <view class="input-title">Venue address:</view>
+        <view class="section">
+            <input name="address" bindtap="toPosition" value="{{form.address}}" />
+        </view>
 
-    <view class="input-title">Phone:</view>
-    <view class="section">
-      <input bindinput="addData" data-type="phone" name="phone"/>
-    </view>
+        <view class="input-title">Phone:</view>
+        <view class="section">
+            <input type="number" bindinput="addData" data-type="phone" name="phone" />
+        </view>
 
-    <view class="input-title">Category:</view>
+        <view class="input-title">Category:</view>
         <checkbox-group name="categories" bindchange="checkboxChange">
-            <label wx:for="{{items}}" wx:key="{{items.value}}">
-                <checkbox color="#394867" value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+            <label wx:for="{{items}}" wx:key="value">
+                <checkbox color="#394867" value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
             </label>
         </checkbox-group>
 
-    <view class="hours">Opening hours:</view>
-    <view class="hours-section">
-      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindOpenTimeChange">
-        <view class="picker"> Open: 
-          <text class="section-picker">{{form['open_time']}}</text>
+        <view class="hours">Opening hours:</view>
+        <view class="hours-section">
+            <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindOpenTimeChange">
+                <view class="picker"> Open:
+                    <text class="section-picker">{{form['open_time']}}</text>
+                </view>
+            </picker>
+
+            <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindCloseTimeChange">
+                <view class="picker"> Close:
+                    <text class="section-picker">{{form['close_time']}}</text>
+                </view>
+            </picker>
         </view>
-      </picker>
-      
-      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindCloseTimeChange">
-        <view class="picker"> Close:
-            <text class="section-picker">{{form['close_time']}}</text>
+
+        <view class="input-title">Specials:</view>
+        <view class="section">
+            <textarea bindinput="addData" data-type="discount" name="discount"></textarea>
         </view>
-      </picker>
-    </view>
 
-    <view class="input-title">Specials:</view>
-    <view class="section">
-      <textarea bindinput="addData" data-type="discount" name="discount"></textarea>
-    </view>
+        <view class="input-title">Add a photo:</view>
 
-    <view class="input-title">Add a photo:</view>
-    <image wx:if="{{photo}}" mode="aspectFit" src="{{photo}}"></image>
-    <view class="section" bindtap="chooseImg">
-        <view wx:if="{{!venue.photo}}" class="section-photo"></view>
-    </view>
+        <view class="section" bindtap="chooseImg">
+            <view wx:if="{{photoPath}}" class="image-container">
+                <image class="image" mode="aspectFit" src="{{photoPath}}"></image>
+            </view>
+            <view wx:else class="section-photo section-photo-default"></view>
+        </view>
 
-    <button class="button-flex" bindtap="save">Create venue</button>
+        <button class="button-flex" bindtap="save">Create venue</button>
 
     </form>
 </view>

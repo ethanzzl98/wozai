@@ -35,13 +35,14 @@ Page({
     const form = this.data.form;
     wx.chooseLocation({
         success(res) {
-            if(res.address!=''){
+            if(res.address != ''){
                 form['address'] = res.address
                 form['latitude'] = res.latitude
                 form['longitude'] = res.longitude
                 page.setData({
                     form
                 })
+                console.log(form)
             }
         }
     })
@@ -85,7 +86,7 @@ Page({
       var that = this;
       const form = that.data.form
       wx.chooseImage({
-               Count: 5, // Default 9 
+               Count: 1, // Default 9 
                Siztype: ['Original', 'compressed'], // can be specified as the original image or a compressed map, the default is 
                SourceType: ['Album', 'Camera'], // You can specify the source is the album or the camera, the default is 
         success: function(res) {
@@ -102,7 +103,7 @@ Page({
       let page = this;
       let categories = []
       let { items, form } = page.data
-    //   console.log({e});
+      console.log({e});
     items.forEach((item) => {
         if (item.checked) {
             categories = [ ...categories, item.name ]
@@ -144,9 +145,13 @@ Page({
   },
 
   onShow(){
-      if (wx.getStorageSync('new')) this.setData({form: {}})
+      if (wx.getStorageSync('new')) {
+            this.setData({
+                form: {},
+                photoPath: null
+            })
+        }
       wx.setStorageSync('new', false)
-      
   },
 
 //   onShow() {
