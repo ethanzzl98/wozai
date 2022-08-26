@@ -21,7 +21,7 @@ App({
             // console.log(loginRes) // { data: { headers: { "X-USER-TOKEN": <User Token> }, user: <User Object> }, ... }
             app.globalData.user = loginRes.data.user // save in globalData, so we can use them throughout the MP
             app.globalData.header = loginRes.data.headers
-            console.log('login success')
+            console.log('login success', app.globalData)
             wx.event.emit('loginFinish')
           }
         })

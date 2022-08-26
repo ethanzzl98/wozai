@@ -35,13 +35,14 @@ Page({
     const form = this.data.form;
     wx.chooseLocation({
         success(res) {
-            if(res.address!=''){
+            if(res.address != ''){
                 form['address'] = res.address
                 form['latitude'] = res.latitude
                 form['longitude'] = res.longitude
                 page.setData({
                     form
                 })
+                console.log(form)
             }
         }
     })

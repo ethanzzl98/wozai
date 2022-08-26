@@ -15,8 +15,8 @@ Page({
         array: ["All", "Bar", "Beauty", "Cafe", "Education", "Gym", "Hookah", "Museum", "Park", "Restaurant", "Shopping", "Sports"],
         selectedCategory: 'All',
         hasSelected: false,
-        latitude: 31.233442,
-        longitude: 121.437512
+        latitude: 31.23515,
+        longitude: 121.43956
     },
 
     getData() {
@@ -36,19 +36,9 @@ Page({
         const page = this;
         const { venues } = data;
         const markers = page.getMarkersFromVenues(venues);
-        // wx.getFuzzyLocation({
-        //     type: 'wgs84',
-        //     success (res) {
-        //         const latitude = res.latitude
-        //         const longitude = res.longitude
-        //         console.log("lat:",latitude,"lon:",longitude)
-        //     }
-        // });
         page.setDistances(venues);
         page.setData({
             markers: markers,
-            latitude: app.globalData.latitude,
-            longitude: app.globalData.longitude,
         });
         console.log("All the venues from the database:", venues)
     },
@@ -62,6 +52,10 @@ Page({
             };
         });
         qqmapsdk.calculateDistance({
+            from: {
+                latitude: page.data.latitude,
+                longitude: page.data.longitude
+            },
             to: locations,
             sig: 'MsAdpInZqYv5wgssFi7ZmLXuM6LnYatr',
             success: function(res) {//成功后的回调
@@ -81,8 +75,12 @@ Page({
             },
             fail: function(error) {
                 console.error(error);
+                page.setData({
+                    venues: venues
+                })
             },
             complete: function() {
+                console.log("continue")
                 page.displayVenuesByCategory();
             }
         })
@@ -114,7 +112,6 @@ Page({
 
     onShow() {
         const page = this;
-
         if (app.globalData.header) {
             page.getData()
         } else {
@@ -123,31 +120,12 @@ Page({
     },
 
     onReady() {
+        const page = this;
         this.mapCtx = wx.createMapContext('myMap')
-        this.mapCtx.moveToLocation();
-    },
-
-    // If I have time, I will fix this function
-    bindmarkertap(e) {
-        console.log(e)
-        const markerIndex = this.data.markers.findIndex((marker) => marker.id === e.markerId);
-        console.log(markerIndex);
-        // this.cleanMarkerStyle();
-        const markers = this.data.markers;
-        markers[markerIndex].iconPath = activeIcon;
-        // this.setData({
-        //     markers: markers
-        // })
-    },
-
-    cleanMarkerStyle() {
-        const markers = this.data.markers;
-        for (let marker in markers) {
-            marker.iconPath = defaultIcon;
-        }
-        this.setData({
-            markers: markers
-        })
+        this.mapCtx.moveToLocation({
+            longitude: page.data.longitude,
+            latitude: page.data.latitude
+        });
     },
 
     bindcallouttap(e) {
