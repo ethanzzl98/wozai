@@ -99,50 +99,56 @@ Page({
       })
     },
 
-  save: function (e) {
-      let page = this;
-      let categories = []
-      let { items, form } = page.data
-      console.log({e});
-    items.forEach((item) => {
-        if (item.checked) {
-            categories = [ ...categories, item.name ]
-        }
-    })
-      const url = app.globalData.baseUrl;
-      const id = e.currentTarget.dataset.id;
-      const d = this.data;
-    //   console.log(d);
-      let data = e.detail.value;
-      wx.request({
-        url: `${app.globalData.baseUrl}/venues`,
-        method: "POST",
-        header: app.globalData.header,
-        data: {
-           venue: form,
-           categories: categories
-        },
-        success(res) {
-            console.log(res)
-            wx.uploadFile({
-              filePath: page.data.photoPath,
-              name: 'file',
-              url: `${app.globalData.baseUrl}/venues/${res.data.id}/upload`,
-              header: app.globalData.header,
-              success(res) {
-                console.log('this is uploaded successfully', res)
-                wx.setStorageSync('new', true)
-                // wx.navigateTo({
-                //   url: `/pages/venues/show?id=${res.data.id}`,
-                // })
-                wx.switchTab({
-                  url: '/pages/venues/index',
+    save: function (e) {
+        let page = this;
+        let categories = []
+        let { items, form } = page.data
+        console.log({ e });
+        items.forEach((item) => {
+            if (item.checked) {
+                categories = [...categories, item.name]
+            }
+        })
+        const url = app.globalData.baseUrl;
+        const id = e.currentTarget.dataset.id;
+        const d = this.data;
+        //   console.log(d);
+        let data = e.detail.value;
+        wx.request({
+            url: `${app.globalData.baseUrl}/venues`,
+            method: "POST",
+            header: app.globalData.header,
+            data: {
+                venue: form,
+                categories: categories
+            },
+            success(res) {
+                
+                console.log(res)
+                wx.uploadFile({
+                    filePath: page.data.photoPath,
+                    name: 'file',
+                    url: `${app.globalData.baseUrl}/venues/${res.data.id}/upload`,
+                    header: app.globalData.header,
+                    success(res) {
+                        console.log('this is uploaded successfully', res)
+                        wx.setStorageSync('new', true)
+                        // wx.navigateTo({
+                        //   url: `/pages/venues/show?id=${res.data.id}`,
+                        // })
+                        wx.showToast({
+                            title: "Venue added!"
+                        })
+                        setTimeout(() => {
+                            wx.switchTab({
+                                url: '/pages/venues/index',
+                            })
+                        }, 1500)
+                    }
                 })
-              }
-            })
-        }
-      })
-  },
+            }
+        })
+    },
 
   onShow(){
       if (wx.getStorageSync('new')) {
