@@ -4,7 +4,7 @@ const app = getApp();
 const key = app.globalData.key;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-const defaultIcon = '../../images/markerIcon.png';
+const defaultIcon = '../../images/map-marker-light.png';
 const activeIcon = '../../images/activeMarkerIcon.png';
 Page({
 
