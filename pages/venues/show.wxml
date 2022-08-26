@@ -23,7 +23,7 @@
             <view class="info-content" bindtap="goToMap">{{venue.address}}</view>
             <view class="info-header" >PHONE</view>
             <view class="info-content" bindtap="makeCall">{{venue.phone === 'null'? '-' : venue.phone}}</view>  
-            <view wx:if="{{venue.discount !== 'null'}}">
+            <view wx:if="{{venue.discount && venue.discount !== 'null'}}">
                 <view class="info-header">NOTES</view>
                 <view class="info-content">{{venue.discount}}</view>
             </view>
