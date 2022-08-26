@@ -61,6 +61,7 @@ Page({
                     user: app.globalData.user,
                     isLogin: app.globalData.user.avatar_url !== null,
                     active: page.data.todayDate !== res.data.last_visit
+                    // orderOfVisit: ......
                 })
             }
         });
