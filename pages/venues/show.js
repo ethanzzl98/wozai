@@ -3,7 +3,7 @@ const app = getApp();
 const key = app.globalData.key;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-const allowCheckinDistance = 1000;
+const allowCheckinDistance = 100;
 Page({
 
     /**

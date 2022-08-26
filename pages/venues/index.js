@@ -104,30 +104,6 @@ Page({
         })
     },
 
-    onLoad() {
-        qqmapsdk = new QQMapWX({
-            key: key
-        });
-    },
-
-    onShow() {
-        const page = this;
-        if (app.globalData.header) {
-            page.getData()
-        } else {
-            wx.event.on('loginFinish', page, page.getData)
-        }
-    },
-
-    onReady() {
-        const page = this;
-        this.mapCtx = wx.createMapContext('myMap')
-        this.mapCtx.moveToLocation({
-            longitude: page.data.longitude,
-            latitude: page.data.latitude
-        });
-    },
-
     bindcallouttap(e) {
         this.navigateToShow(e.detail.markerId);
     },
@@ -155,9 +131,36 @@ Page({
 
     displayVenuesByCategory() {
         const page = this;
+        const venuesFiltered = page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory));
+        const markers = page.getMarkersFromVenues(venuesFiltered);
         this.setData({
-            venuesFiltered: page.data.selectedCategory === 'All' ? page.data.venues : page.data.venues.filter(venue => venue.categories.includes(page.data.selectedCategory))
+            venuesFiltered,
+            markers
         })
         console.log("Venues displayed:", page.data);
+    },
+
+    onLoad() {
+        qqmapsdk = new QQMapWX({
+            key: key
+        });
+    },
+
+    onShow() {
+        const page = this;
+        if (app.globalData.header) {
+            page.getData()
+        } else {
+            wx.event.on('loginFinish', page, page.getData)
+        }
+    },
+
+    onReady() {
+        const page = this;
+        this.mapCtx = wx.createMapContext('myMap')
+        this.mapCtx.moveToLocation({
+            longitude: page.data.longitude,
+            latitude: page.data.latitude
+        });
     }
 })
